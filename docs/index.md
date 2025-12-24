@@ -8,9 +8,9 @@ hide:
 <div style="text-align: center; margin: 2rem 0 3rem 0;" markdown>
 
 <!-- Logo for Light Mode (shows dark logo on light background) -->
-<img src="../assets/A2UI_dark.svg" alt="A2UI Logo" width="120" class="light-mode-only" style="margin-bottom: 1rem;">
+<img src="assets/A2UI_dark.svg" alt="A2UI Logo" width="120" class="light-mode-only" style="margin-bottom: 1rem;">
 <!-- Logo for Dark Mode (shows light logo on dark background) -->
-<img src="../assets/A2UI_light.svg" alt="A2UI Logo" width="120" class="dark-mode-only" style="margin-bottom: 1rem;">
+<img src="assets/A2UI_light.svg" alt="A2UI Logo" width="120" class="dark-mode-only" style="margin-bottom: 1rem;">
 
 # 에이전트 주도 인터페이스를 위한 프로토콜
 
@@ -114,7 +114,7 @@ A2UI가 해결하고자 하는 문제는 다음과 같습니다: **AI 에이전�
 5. **사용자가** UI와 상호작용하고, 액션을 에이전트에게 다시 보냅니다.
 6. **에이전트가** 업데이트된 A2UI 메시지로 응답합니다.
 
-![엔드-투-엔드 데이터 흐름](../assets/end-to-end-data-flow.png)
+![엔드-투-엔드 데이터 흐름](assets/end-to-end-data-flow.png)
 
 ## A2UI 실제 사례
 
@@ -123,7 +123,7 @@ A2UI가 해결하고자 하는 문제는 다음과 같습니다: **AI 에이전�
 <div style="margin: 2rem 0;">
   <div style="border-radius: .8rem; overflow: hidden; box-shadow: var(--md-shadow-z2);">
     <video width="100%" height="auto" controls playsinline style="display: block; aspect-ratio: 16/9; object-fit: cover;">
-      <source src="../assets/landscape-architect-demo.mp4" type="video/mp4">
+      <source src="assets/landscape-architect-demo.mp4" type="video/mp4">
       브라우저가 비디오 태그를 지원하지 않습니다.
     </video>
   </div>
@@ -137,7 +137,7 @@ A2UI가 해결하고자 하는 문제는 다음과 같습니다: **AI 에이전�
 <div style="margin: 2rem 0;">
   <div style="border-radius: .8rem; overflow: hidden; box-shadow: var(--md-shadow-z2);">
     <video width="100%" height="auto" controls playsinline style="display: block; aspect-ratio: 16/9; object-fit: cover;">
-      <source src="../assets/a2ui-custom-compnent.mp4" type="video/mp4">
+      <source src="assets/a2ui-custom-compnent.mp4" type="video/mp4">
       브라우저가 비디오 태그를 지원하지 않습니다.
     </video>
   </div>
@@ -150,4 +150,4 @@ A2UI가 해결하고자 하는 문제는 다음과 같습니다: **AI 에이전�
 
 CopilotKit의 공개된 [A2UI 위젯 빌더](https://go.copilotkit.ai/A2UI-widget-builder)도 체험해 볼 수 있습니다.
 
-[![A2UI Composer](../assets/A2UI-widget-builder.png)](https://go.copilotkit.ai/A2UI-widget-builder)
+[![A2UI Composer](assets/A2UI-widget-builder.png)](https://go.copilotkit.ai/A2UI-widget-builder)

@@ -83,7 +83,6 @@ extra_css:
 # Configuration
 theme:
   name: material
-  language: ko
   font:
     text: Google Sans
     code: Roboto Mono

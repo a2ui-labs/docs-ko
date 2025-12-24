@@ -10,7 +10,7 @@
 클라이언트 (스트림 리더) → 메시지 파서 → 렌더러 → 네이티브 UI
 ```
 
-![엔드-투-엔드 데이터 흐름](../assets/end-to-end-data-flow.png)
+![엔드-투-엔드 데이터 흐름](/assets/end-to-end-data-flow.png)
 
 ## 메시지 형식
 
