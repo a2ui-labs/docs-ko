@@ -39,8 +39,6 @@ jobs:
       contents: write
       actions: read
 
-    if: github.repository == 'google/A2UI'
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
