@@ -1,115 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://a2ui.org/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/agents/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/agents/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/community/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/community/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/composer/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/composer/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/quickstart/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/quickstart/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/renderers/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/renderers/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/roadmap/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/roadmap/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/transports/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/transports/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/concepts/components/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/concepts/components/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/concepts/data-binding/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/concepts/data-binding/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/concepts/data-flow/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/concepts/data-flow/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/concepts/overview/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/concepts/overview/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/guides/agent-development/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/guides/agent-development/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/guides/client-setup/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/guides/client-setup/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/guides/custom-components/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/guides/custom-components/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/guides/renderer-development/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/guides/renderer-development/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/guides/theming/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/guides/theming/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/introduction/agent-ui-ecosystem/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/introduction/agent-ui-ecosystem/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/introduction/how-to-use/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/introduction/how-to-use/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/introduction/what-is-a2ui/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/introduction/what-is-a2ui/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/introduction/where-is-it-used/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/introduction/where-is-it-used/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/introduction/who-is-it-for/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/introduction/who-is-it-for/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/reference/components/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/reference/components/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/reference/messages/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/reference/messages/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/specification/v0.8-a2a-extension/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/specification/v0.8-a2a-extension/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/specification/v0.8-a2ui/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/specification/v0.8-a2ui/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/specification/v0.9-a2ui/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/specification/v0.9-a2ui/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
     <url>
-         <loc>https://a2ui.org/specification/v0.9-evolution-guide/</loc>
+         <loc>https://a2ui-labs.github.io/docs-ko/specification/v0.9-evolution-guide/</loc>
          <lastmod>2025-12-24</lastmod>
     </url>
 </urlset>
