@@ -2,7 +2,7 @@
 
 **CopilotKit A2UI Widget Builder**를 사용하여 대화형으로 A2UI 위젯을 빌드해 보세요.
 
-[![A2UI Composer](../assets/A2UI-widget-builder.png)](https://go.copilotkit.ai/A2UI-widget-builder)
+[![A2UI Composer](assets/A2UI-widget-builder.png)](https://go.copilotkit.ai/A2UI-widget-builder)
 
 **[위젯 빌더 실행하기 →](https://go.copilotkit.ai/A2UI-widget-builder)**
 
