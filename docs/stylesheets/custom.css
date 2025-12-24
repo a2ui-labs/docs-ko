@@ -1,0 +1,41 @@
+/**
+ * Copyright 2025 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* --- 글로벌 사이트 설정 --- */
+
+/* 콘텐츠 영역을 표준 MkDocs Material보다 넓게 설정합니다. */
+.md-grid {
+  max-width: 80%;
+}
+
+/* 선택 사항: 공지 바(announcement bar) 버튼을 사용하는 경우를 위한 스타일 조정 */
+.announce .md-button {
+  font-size: 0.8em;
+  padding: 0.3em 1em;
+  margin-left: 0.5em;
+}
+
+/* --- 다크/라이트 모드 유틸리티 --- */
+
+/* 다크 모드 전용 요소를 라이트(기본) 모드에서 숨깁니다. */
+[data-md-color-scheme="default"] .dark-mode-only {
+  display: none !important;
+}
+
+/* 라이트 모드 전용 요소를 다크(slate) 모드에서 숨깁니다. */
+[data-md-color-scheme="slate"] .light-mode-only {
+  display: none !important;
+}
