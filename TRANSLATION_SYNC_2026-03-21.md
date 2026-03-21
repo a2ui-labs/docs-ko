@@ -28,9 +28,19 @@
    - `docs/ecosystem/renderers.md`
    - `docs/reference/renderers.md`
    - `docs/reference/agents.md`
+6. 레거시 경로 정리
+   - `docs/agents.md`
+   - `docs/renderers.md`
+   - `docs/transports.md`
+   - `docs/community.md`
+   - `docs/introduction/where-is-it-used.md`
+   위 문서는 리다이렉트 대상이 되도록 제거했습니다.
+7. 미디어 경로 정리
+   - `docs/index.md`의 데모 비디오 참조를 상류 저장소와 동일한 `assets/a2ui-custom-component.mp4`로 맞췄습니다.
 
 ## 참고 사항
 
 - 기존 번역 문서는 가능한 한 유지했고, 새 구조에서 필요한 문서만 추가/갱신했습니다.
+- 구 경로에 남아 있던 중복 문서는 제거해서 리다이렉트가 실제로 동작하도록 정리했습니다.
 - 일부 기존 문서(`docs/reference/components.md`, `docs/reference/messages.md`, `docs/guides/*`, `docs/introduction/*`, `docs/roadmap.md`)는 후속 정리가 필요할 수 있습니다.
 - 외부 링크는 새 구조와 호환되도록 조정했지만, 저장소에 없는 일부 원문 스키마 파일 링크는 로컬 문서 링크로 대체하거나 요약했습니다.
