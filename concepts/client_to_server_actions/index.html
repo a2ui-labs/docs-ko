@@ -12,13 +12,13 @@
         <meta name="author" content="Google">
       
       
-        <link rel="canonical" href="https://a2ui-labs.github.io/docs-ko/specification/v0.8-a2a-extension/">
+        <link rel="canonical" href="https://a2ui-labs.github.io/docs-ko/concepts/client_to_server_actions/">
       
       
-        <link rel="prev" href="../v0.8-a2ui/">
+        <link rel="prev" href="../catalogs/">
       
       
-        <link rel="next" href="../v0.9-a2ui/">
+        <link rel="next" href="../transports/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>A2A 확장 - A2UI</title>
+        <title>클라이언트-서버 액션 - A2UI</title>
       
     
     
@@ -157,7 +157,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#a2a-a2ui-v08" class="md-skip">
+        <a href="#a2ui-" class="md-skip">
           Skip to content
         </a>
       
@@ -192,7 +192,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A2A 확장
+              클라이언트-서버 액션
             
           </span>
         </div>
@@ -591,8 +591,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -614,11 +616,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -639,7 +641,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -657,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -685,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/data-flow/" class="md-nav__link">
+      <a href="../data-flow/" class="md-nav__link">
         
   
   
@@ -713,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/components/" class="md-nav__link">
+      <a href="../components/" class="md-nav__link">
         
   
   
@@ -741,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/data-binding/" class="md-nav__link">
+      <a href="../data-binding/" class="md-nav__link">
         
   
   
@@ -769,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/catalogs/" class="md-nav__link">
+      <a href="../catalogs/" class="md-nav__link">
         
   
   
@@ -794,10 +796,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../concepts/client_to_server_actions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클라이언트-서버 액션
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -813,6 +842,282 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        액션 아키텍처
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="액션 아키텍처">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        스키마에서의 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        로컬 액션과 서버 이벤트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기본 카탈로그 액션 검증
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        로컬 상태 업데이트와 쓰기 계약
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="로컬 상태 업데이트와 쓰기 계약">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        폼 제출 패턴
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        사용자 상호작용 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="사용자 상호작용 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        예시: 액션 페이로드(v0.9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        에이전트 처리
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        클라이언트-서버 오류 보고
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="클라이언트-서버 오류 보고">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        검증 실패
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v09_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        데이터 모델 동기화(v0.9)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="데이터 모델 동기화(v0.9)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        동기화 활성화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        와이어 상의 동작
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 데이터 모델 동기화를 쓰나요?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        클라이언트 메타데이터와 기능
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="클라이언트 메타데이터와 기능">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기능 광고
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 필요한가요?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        전송 및 인코딩
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        다음 단계
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -825,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/transports/" class="md-nav__link">
+      <a href="../transports/" class="md-nav__link">
         
   
   
@@ -1269,10 +1574,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1284,11 +1587,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1309,7 +1612,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1324,10 +1627,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1339,11 +1640,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
         
           
           <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
@@ -1364,7 +1665,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1382,7 +1683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.8-a2ui/" class="md-nav__link">
+      <a href="../../specification/v0.8-a2ui/" class="md-nav__link">
         
   
   
@@ -1407,19 +1708,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../specification/v0.8-a2a-extension/" class="md-nav__link">
         
   
   
@@ -1435,7 +1727,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1509,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.9-a2ui/" class="md-nav__link">
+      <a href="../../specification/v0.9-a2ui/" class="md-nav__link">
         
   
   
@@ -1537,7 +1828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.9-evolution-guide/" class="md-nav__link">
+      <a href="../../specification/v0.9-evolution-guide/" class="md-nav__link">
         
   
   
@@ -1766,6 +2057,270 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        액션 아키텍처
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="액션 아키텍처">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        스키마에서의 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        로컬 액션과 서버 이벤트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기본 카탈로그 액션 검증
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        로컬 상태 업데이트와 쓰기 계약
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="로컬 상태 업데이트와 쓰기 계약">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        폼 제출 패턴
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        사용자 상호작용 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="사용자 상호작용 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        예시: 액션 페이로드(v0.9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        에이전트 처리
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        클라이언트-서버 오류 보고
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="클라이언트-서버 오류 보고">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        검증 실패
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v09_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        데이터 모델 동기화(v0.9)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="데이터 모델 동기화(v0.9)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        동기화 활성화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        와이어 상의 동작
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 데이터 모델 동기화를 쓰나요?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        클라이언트 메타데이터와 기능
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="클라이언트 메타데이터와 기능">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기능 광고
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 필요한가요?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        전송 및 인코딩
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        다음 단계
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1806,37 +2361,11 @@
   
     
     
-      
-  
-  
-    
-    
       <li class="md-path__item">
-        <a href="../v0.8-a2ui/" class="md-path__link">
+        <a href="../overview/" class="md-path__link">
           
   <span class="md-ellipsis">
-    사양
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../v0.8-a2ui/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    v0.8 (안정판)
+    개념
   </span>
 
         </a>
@@ -1859,26 +2388,163 @@
     
       
     
-    <a href="https://github.com/google/A2UI/raw/main/docs/specification/v0.8-a2a-extension.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/google/A2UI/raw/main/docs/concepts/client_to_server_actions.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="a2a-a2ui-v08">A2A 프로토콜을 위한 A2UI 확장 (v0.8)<a class="headerlink" href="#a2a-a2ui-v08" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">공지</p>
-<p>이 명세는 <code>specification/0.8/docs/a2ui_extension_specification.md</code>로부터 자동으로 포함됩니다. 해당 명세의 업데이트 사항은 여기에 자동으로 반영됩니다.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">버전 호환성</p>
-<p>이 확장 명세는 A2UI v0.8 및 A2A 프로토콜에 적용됩니다. 기본 A2UI 프로토콜에 대해서는 <a href="../v0.8-a2ui/">v0.8 프로토콜 명세</a>를 참조하세요.</p>
-</div>
-<p><strong>관련 문서:</strong>
-- <a href="../v0.8-a2ui/">A2UI 프로토콜 v0.8</a> (안정 버전)
-- <a href="https://a2a-protocol.org">A2A 프로토콜 문서</a></p>
-<hr />
+<h1 id="a2ui-">A2UI 클라이언트-서버 액션<a class="headerlink" href="#a2ui-" title="Permanent link">&para;</a></h1>
+<p>A2UI의 상호작용은 양방향 통신 루프에 의존합니다. 에이전트가 컴포넌트와 데이터 업데이트를 스트리밍하면서 UI를 주도하는 동안, 클라이언트는 <strong>액션(Actions)</strong> 과 <strong>데이터 모델 동기화</strong>를 통해 사용자 의도를 에이전트로 다시 전달합니다.</p>
+<h2 id="_1">액션 아키텍처<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>액션은 UI 컴포넌트가 동작을 트리거할 수 있게 합니다. <code>Action</code> 스키마에 정의되며, 크게 두 가지로 나뉩니다.</p>
+<ol>
+<li><strong>서버 이벤트</strong>: 에이전트로 전달되어 처리됩니다. 예: "제출" 클릭</li>
+<li><strong>로컬 함수 호출</strong>: 클라이언트에서만 실행됩니다. 예: URL 열기</li>
+</ol>
+<h3 id="_2">스키마에서의 연결<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>Button</code> 같은 컴포넌트는 <code>action</code> 속성을 노출합니다. 서버 이벤트 연결 예시는 다음과 같습니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;submit-btn&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Button&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;child&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;btn-text&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;submit_reservation&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/reservationTime&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/partySize&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><strong><code>name</code></strong>: 에이전트가 분기 처리할 안정적인 식별자입니다.</li>
+<li><strong><code>context</code></strong>: 키-값 쌍의 맵입니다. 값은 리터럴이거나 현재 데이터 모델 상태에서 값을 가져오는 <code>path</code>일 수 있습니다.</li>
+</ul>
+<blockquote>
+<p><strong>참고</strong></p>
+<p>데이터 모델은 서피스의 전체 상태 트리이고, 액션의 <code>context</code>는 그중 필요한 부분만 골라낸 "뷰"에 가깝습니다. 이렇게 하면 에이전트가 거대한 상태 트리를 직접 탐색하지 않아도 됩니다.</p>
+</blockquote>
+<h3 id="_3">로컬 액션과 서버 이벤트<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>서버 이벤트가 에이전트와 상호작용하는 핵심 방식이지만, <strong>로컬 액션</strong>은 네트워크 왕복 없이 클라이언트에서 즉시 동작해야 할 때 유용합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;help-btn&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Button&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;child&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;help-text&quot;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;functionCall&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">&quot;call&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openUrl&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://a2ui.org/help&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>로컬 액션의 대표적인 용도는 다음과 같습니다.</p>
+<ul>
+<li>제출 전에 폼 입력값 검증</li>
+<li>로컬 표시 값 포맷팅</li>
+</ul>
+<h3 id="_4">기본 카탈로그 액션 검증<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>기본 카탈로그는 클라이언트에서 실행 가능한 제한된 체크(check) 집합을 정의합니다. 대화형 컴포넌트는 <code>checks</code> 목록을 가질 수 있고, 버튼의 경우 체크에 실패하면 클라이언트에서 자동으로 비활성화됩니다.</p>
+<p>이 체크는 잘못된 상호작용을 사전에 막는 <strong>UI 상태</strong>를 다루는 것이며, 서버에서 여전히 수행되어야 하는 <strong>데이터 무결성</strong> 검증을 대체하지 않습니다.</p>
+<h2 id="_5">로컬 상태 업데이트와 쓰기 계약<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>액션이 전송되기 전에 이미 클라이언트는 UI 상태를 로컬에서 관리하고 있습니다. A2UI는 <code>TextField</code>, <code>CheckBox</code>, <code>Slider</code> 같은 입력 컴포넌트에 대해 <strong>읽기/쓰기 계약(Read/Write Contract)</strong> 을 정의합니다.</p>
+<ol>
+<li><strong>읽기(Model → View)</strong>: 컴포넌트가 렌더링될 때 바인딩된 <code>path</code>에서 값을 읽습니다.</li>
+<li><strong>쓰기(View → Model)</strong>: 사용자가 입력하거나 체크하면 클라이언트가 새 값을 로컬 데이터 모델에 즉시 씁니다.</li>
+</ol>
+<p>즉, 로컬 모델은 항상 UI의 현재 상태에 대한 진실의 원천입니다. 사용자가 버튼을 눌러 액션을 트리거하기 전까지는 이 동기화가 완전히 클라이언트 안에서 일어납니다.</p>
+<blockquote>
+<p><strong>중요</strong></p>
+<p>로컬 모델 업데이트는 동기적입니다. 따라서 액션이 <code>context</code> 경로를 해석하거나 <code>DataModelSync</code> 페이로드를 포장하기 전에 데이터 모델이 완전히 갱신됩니다.</p>
+</blockquote>
+<p>이 방식은 네트워크 디바운싱을 직접 구현할 필요를 줄이고, 사용자가 <code>TextField</code>에 입력하는 동안 지연으로 인한 흔들림을 크게 줄여 줍니다.</p>
+<h3 id="_6">폼 제출 패턴<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>이 분리 덕분에 견고한 폼 제출 패턴을 만들 수 있습니다.</p>
+<ul>
+<li><code>TextField</code>가 <code>/reservationTime</code>에 바인딩됩니다.</li>
+<li>사용자가 <code>"7:00 PM"</code>을 입력하면 로컬 모델의 <code>/reservationTime</code>이 즉시 갱신됩니다.</li>
+<li>사용자가 <code>"Book"</code> 버튼을 누르면 버튼 액션이 로컬 모델의 <code>path: "/reservationTime"</code>을 해석해 현재 값을 서버로 보냅니다.</li>
+</ul>
+<h2 id="_7">사용자 상호작용 흐름<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>사용자가 컴포넌트와 상호작용하면:</p>
+<ol>
+<li>클라이언트가 로컬 <strong>데이터 모델</strong>에서 <code>context</code>의 모든 <code>path</code> 참조를 해석합니다.</li>
+<li>클라이언트가 <code>client_to_server.json</code> 형식에 맞는 액션 페이로드를 만듭니다.</li>
+<li>선택된 전송 계층(A2A, WebSockets 등)을 통해 서버로 전송합니다.</li>
+</ol>
+<h3 id="v09">예시: 액션 페이로드(v0.9)<a class="headerlink" href="#v09" title="Permanent link">&para;</a></h3>
+<p>데이터 모델에 <code>{"reservationTime": "7:00 PM", "partySize": 4}</code>가 들어 있는 상태에서 사용자가 버튼을 클릭하면, 클라이언트는 다음과 같이 보냅니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v0.9&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;submit_reservation&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;surfaceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;booking-surface&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;sourceComponentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;submit-btn&quot;</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-25T10:40:00Z&quot;</span><span class="p">,</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7:00 PM&quot;</span><span class="p">,</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<blockquote>
+<p><strong>버전 참고</strong></p>
+<p>v0.8에서는 최상위 키가 <code>userAction</code>이었습니다. v0.9에서는 위 예시처럼 더 단순한 <code>action</code> 키로 바뀌었습니다. 표준 프로토콜 파서는 페이로드에 선언된 버전에 해당하는 키를 기대합니다.</p>
+</blockquote>
+<h2 id="_8">에이전트 처리<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>에이전트(또는 오케스트레이터)가 이 이벤트를 받아 처리합니다. 에이전트 시스템에서는 보통 이 이벤트를 LLM용 내부 사용자 질의로 변환합니다.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">if</span> <span class="n">action_name</span> <span class="o">==</span> <span class="s2">&quot;submit_reservation&quot;</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">time</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">size</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;User submitted a reservation for </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> people at </span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s2">.&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="-">클라이언트-서버 오류 보고<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<p>사용자 액션 외에도 클라이언트는 <code>error</code> 페이로드를 사용해 시스템 수준 오류를 서버로 보낼 수 있습니다.</p>
+<h3 id="_9">검증 실패<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>에이전트가 카탈로그 스키마나 프로토콜 규칙을 위반하는 A2UI JSON을 보내면, 클라이언트는 <code>VALIDATION_FAILED</code> 오류를 보냅니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v0.9&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VALIDATION_FAILED&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;surfaceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;booking-surface&quot;</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/components/0/children&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Expected array of strings, got null.&quot;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>에이전트는 이 오류를 받아 수정하거나, 내부적으로 보정한 뒤 수정된 UI를 다시 보낼 수 있습니다.</p>
+<h2 id="v09_1">데이터 모델 동기화(v0.9)<a class="headerlink" href="#v09_1" title="Permanent link">&para;</a></h2>
+<p>v0.9에서는 강력한 "상태 비저장(stateless)" 동기화 기능이 도입되었습니다. 클라이언트가 서버로 보내는 모든 메시지의 메타데이터에 해당 서피스의 <strong>전체 데이터 모델</strong>을 자동으로 포함할 수 있습니다.</p>
+<h3 id="_10">동기화 활성화<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>서피스 초기화 시 에이전트가 동기화를 요청합니다. <code>createSurface</code> 메시지에서 <code>sendDataModel: true</code>를 설정하면, 클라이언트는 동기화 루프를 시작합니다.</p>
+<h3 id="_11">와이어 상의 동작<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>동기화가 켜지면 클라이언트는 데이터 모델을 별도 메시지로 보내지 않습니다. 대신 A2A 메시지 같은 전송 봉투의 <strong>메타데이터</strong>에 붙입니다.</p>
+<h3 id="_12">왜 데이터 모델 동기화를 쓰나요?<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>더 단순한 연결</li>
+<li>상태 비저장 에이전트</li>
+<li>음성이나 텍스트 같은 verbal shortcut 지원</li>
+</ul>
+<h2 id="_13">클라이언트 메타데이터와 기능<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>에이전트가 UI를 안전하게 보내려면 클라이언트가 어떤 컴포넌트 카탈로그를 지원하는지 먼저 광고해야 합니다. 이는 <code>a2uiClientCapabilities</code> 객체로 처리합니다.</p>
+<h3 id="_14">기능 광고<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>클라이언트는 서버로 보내는 메시지의 메타데이터에 <code>a2uiClientCapabilities</code> 객체를 포함합니다.</p>
+<h3 id="_15">왜 필요한가요?<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>이 핸드셰이크가 없으면 에이전트는 렌더러가 특정 컴포넌트를 실제로 처리할 수 있는지 확신할 수 없습니다.</p>
+<h2 id="_16">전송 및 인코딩<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>A2UI는 전송 방식에 종속되지 않지만, 일반적으로 A2A 또는 WebSockets 위에서 사용됩니다. 페이로드가 어떤 식으로 감싸이는지 이해하는 것이 구현에 중요합니다.</p>
+<h2 id="_17">다음 단계<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../transports/">전송 계층</a></li>
+<li><a href="../../reference/messages/">메시지 레퍼런스</a></li>
+<li><a href="../../guides/client-setup/">클라이언트 설정 가이드</a></li>
+</ul>
 
 
 
@@ -1918,7 +2584,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../v0.8-a2ui/" class="md-footer__link md-footer__link--prev" aria-label="Previous: A2UI 사양">
+          <a href="../catalogs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 카탈로그">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1928,20 +2594,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                A2UI 사양
+                카탈로그
               </div>
             </div>
           </a>
         
         
           
-          <a href="../v0.9-a2ui/" class="md-footer__link md-footer__link--next" aria-label="Next: A2UI 사양">
+          <a href="../transports/" class="md-footer__link md-footer__link--next" aria-label="Next: 전송 계층">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                A2UI 사양
+                전송 계층
               </div>
             </div>
             <div class="md-footer__button md-icon">

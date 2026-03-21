@@ -12,13 +12,13 @@
         <meta name="author" content="Google">
       
       
-        <link rel="canonical" href="https://a2ui-labs.github.io/docs-ko/specification/v0.8-a2a-extension/">
+        <link rel="canonical" href="https://a2ui-labs.github.io/docs-ko/concepts/transports/">
       
       
-        <link rel="prev" href="../v0.8-a2ui/">
+        <link rel="prev" href="../client_to_server_actions/">
       
       
-        <link rel="next" href="../v0.9-a2ui/">
+        <link rel="next" href="../../guides/client-setup/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>A2A 확장 - A2UI</title>
+        <title>전송 계층 - A2UI</title>
       
     
     
@@ -157,7 +157,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#a2a-a2ui-v08" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -192,7 +192,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A2A 확장
+              전송 계층
             
           </span>
         </div>
@@ -591,8 +591,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -614,11 +616,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -639,7 +641,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -657,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -685,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/data-flow/" class="md-nav__link">
+      <a href="../data-flow/" class="md-nav__link">
         
   
   
@@ -713,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/components/" class="md-nav__link">
+      <a href="../components/" class="md-nav__link">
         
   
   
@@ -741,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/data-binding/" class="md-nav__link">
+      <a href="../data-binding/" class="md-nav__link">
         
   
   
@@ -769,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/catalogs/" class="md-nav__link">
+      <a href="../catalogs/" class="md-nav__link">
         
   
   
@@ -797,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/client_to_server_actions/" class="md-nav__link">
+      <a href="../client_to_server_actions/" class="md-nav__link">
         
   
   
@@ -822,10 +824,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../concepts/transports/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전송 계층
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -841,6 +870,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        동작 방식
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        사용 가능한 전송 방식
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2A 프로토콜
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A2A 프로토콜">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ag-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AG UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        커스텀 전송 방식
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        다음 단계
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1269,10 +1390,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1284,11 +1403,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1309,7 +1428,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1324,10 +1443,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1339,11 +1456,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
         
           
           <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
@@ -1364,7 +1481,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1382,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.8-a2ui/" class="md-nav__link">
+      <a href="../../specification/v0.8-a2ui/" class="md-nav__link">
         
   
   
@@ -1407,19 +1524,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../specification/v0.8-a2a-extension/" class="md-nav__link">
         
   
   
@@ -1435,7 +1543,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1509,7 +1616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.9-a2ui/" class="md-nav__link">
+      <a href="../../specification/v0.9-a2ui/" class="md-nav__link">
         
   
   
@@ -1537,7 +1644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v0.9-evolution-guide/" class="md-nav__link">
+      <a href="../../specification/v0.9-evolution-guide/" class="md-nav__link">
         
   
   
@@ -1766,6 +1873,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        동작 방식
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        사용 가능한 전송 방식
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2A 프로토콜
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A2A 프로토콜">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ag-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AG UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        커스텀 전송 방식
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        다음 단계
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1806,37 +1993,11 @@
   
     
     
-      
-  
-  
-    
-    
       <li class="md-path__item">
-        <a href="../v0.8-a2ui/" class="md-path__link">
+        <a href="../overview/" class="md-path__link">
           
   <span class="md-ellipsis">
-    사양
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../v0.8-a2ui/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    v0.8 (안정판)
+    개념
   </span>
 
         </a>
@@ -1859,26 +2020,80 @@
     
       
     
-    <a href="https://github.com/google/A2UI/raw/main/docs/specification/v0.8-a2a-extension.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/google/A2UI/raw/main/docs/concepts/transports.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="a2a-a2ui-v08">A2A 프로토콜을 위한 A2UI 확장 (v0.8)<a class="headerlink" href="#a2a-a2ui-v08" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">공지</p>
-<p>이 명세는 <code>specification/0.8/docs/a2ui_extension_specification.md</code>로부터 자동으로 포함됩니다. 해당 명세의 업데이트 사항은 여기에 자동으로 반영됩니다.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">버전 호환성</p>
-<p>이 확장 명세는 A2UI v0.8 및 A2A 프로토콜에 적용됩니다. 기본 A2UI 프로토콜에 대해서는 <a href="../v0.8-a2ui/">v0.8 프로토콜 명세</a>를 참조하세요.</p>
-</div>
-<p><strong>관련 문서:</strong>
-- <a href="../v0.8-a2ui/">A2UI 프로토콜 v0.8</a> (안정 버전)
-- <a href="https://a2a-protocol.org">A2A 프로토콜 문서</a></p>
-<hr />
+<h1 id="_1">전송 계층 (메시지 전달)<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>전송 계층은 에이전트가 생성한 A2UI 메시지를 클라이언트로 전달합니다. A2UI는 전송 방식에 종속되지 않으므로 JSON을 보낼 수 있는 어떤 방식도 사용할 수 있습니다.</p>
+<p>실제 컴포넌트 렌더링은 <a href="../../reference/renderers/">렌더러</a>가 담당하고, <a href="../../reference/agents/">에이전트</a>는 A2UI 메시지를 생성합니다. 에이전트에서 클라이언트로 메시지를 전달하는 역할이 전송 계층입니다.</p>
+<h2 id="_2">동작 방식<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>에이전트 → 전송 계층 → 클라이언트 렌더러
+</span></code></pre></div>
+<p>A2UI는 JSON 메시지 시퀀스를 정의합니다. 전송 계층은 이 시퀀스를 에이전트에서 클라이언트로 전달합니다. 보통은 JSON Lines(JSONL) 같은 스트림 형식이 사용되며, 각 줄이 하나의 A2UI 메시지입니다.</p>
+<h2 id="_3">사용 가능한 전송 방식<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>전송 방식</th>
+<th>상태</th>
+<th>활용 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A2A 프로토콜</strong></td>
+<td>✅ 안정판</td>
+<td>멀티 에이전트 시스템, 엔터프라이즈 메시</td>
+</tr>
+<tr>
+<td><strong>AG UI</strong></td>
+<td>✅ 안정판</td>
+<td>풀스택 React 애플리케이션</td>
+</tr>
+<tr>
+<td><strong>REST API</strong></td>
+<td>📋 계획됨</td>
+<td>단순 HTTP 엔드포인트</td>
+</tr>
+<tr>
+<td><strong>WebSockets</strong></td>
+<td>💡 제안됨</td>
+<td>실시간 양방향 통신</td>
+</tr>
+<tr>
+<td><strong>SSE (Server-Sent Events)</strong></td>
+<td>💡 제안됨</td>
+<td>웹 스트리밍</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a2a">A2A 프로토콜<a class="headerlink" href="#a2a" title="Permanent link">&para;</a></h2>
+<p><a href="https://a2a-protocol.org">Agent2Agent(A2A) 프로토콜</a>은 안전하고 표준화된 에이전트 간 통신을 제공합니다. A2UI 확장을 통해 A2UI와 쉽게 통합할 수 있습니다.</p>
+<p>장점:</p>
+<ul>
+<li>보안 및 인증 내장</li>
+<li>다양한 메시지 형식과 인증/전송 프로토콜에 대한 바인딩 지원</li>
+<li>관심사의 명확한 분리</li>
+</ul>
+<h3 id="ag-ui">AG UI<a class="headerlink" href="#ag-ui" title="Permanent link">&para;</a></h3>
+<p><a href="https://ag-ui.com/">AG UI</a>는 A2UI 메시지를 AG UI 메시지로 변환하고, 전송과 상태 동기화를 자동으로 처리합니다.</p>
+<h2 id="_4">커스텀 전송 방식<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>JSON을 전송할 수 있는 방식이라면 무엇이든 사용할 수 있습니다.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// HTTP/REST 예시를 여기에 추가할 수 있습니다.</span>
+</span></code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// WebSocket 예시를 여기에 추가할 수 있습니다.</span>
+</span></code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// SSE 예시를 여기에 추가할 수 있습니다.</span>
+</span></code></pre></div>
+<h2 id="_5">다음 단계<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://a2a-protocol.org">A2A 프로토콜 문서</a></li>
+<li><a href="../../specification/v0.8-a2a-extension/">A2A 확장 명세</a></li>
+</ul>
 
 
 
@@ -1918,7 +2133,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../v0.8-a2ui/" class="md-footer__link md-footer__link--prev" aria-label="Previous: A2UI 사양">
+          <a href="../client_to_server_actions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 클라이언트-서버 액션">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1928,20 +2143,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                A2UI 사양
+                클라이언트-서버 액션
               </div>
             </div>
           </a>
         
         
           
-          <a href="../v0.9-a2ui/" class="md-footer__link md-footer__link--next" aria-label="Next: A2UI 사양">
+          <a href="../../guides/client-setup/" class="md-footer__link md-footer__link--next" aria-label="Next: 클라이언트 설정">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                A2UI 사양
+                클라이언트 설정
               </div>
             </div>
             <div class="md-footer__button md-icon">
