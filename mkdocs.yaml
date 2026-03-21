@@ -37,35 +37,41 @@ nav:
       - A2UI란 무엇인가요?: introduction/what-is-a2ui.md
       - 누구를 위한 것인가요?: introduction/who-is-it-for.md
       - 어떻게 사용할 수 있나요?: introduction/how-to-use.md
-      - 어디에서 사용되나요?: introduction/where-is-it-used.md
       - 에이전트 UI 생태계: introduction/agent-ui-ecosystem.md
   - 퀵스타트: quickstart.md
   - A2UI Composer ⭐: composer.md
-  - 개발자 가이드:
-      - 클라이언트 설정: guides/client-setup.md
-      - 에이전트 개발: guides/agent-development.md
-      - 커스텀 컴포넌트: guides/custom-components.md
-      - 테마 및 스타일링: guides/theming.md
-  - 핵심 개념:
+  - 개념:
       - 개요: concepts/overview.md
       - 데이터 흐름: concepts/data-flow.md
       - 컴포넌트 및 구조: concepts/components.md
       - 데이터 바인딩: concepts/data-binding.md
-  - 사양(Specifications):
+      - 카탈로그: concepts/catalogs.md
+      - 클라이언트-서버 액션: concepts/client_to_server_actions.md
+      - 전송 계층: concepts/transports.md
+  - 개발자 가이드:
+      - 클라이언트 설정: guides/client-setup.md
+      - 에이전트 개발: guides/agent-development.md
+      - 렌더러 개발: guides/renderer-development.md
+      - 커스텀 컴포넌트: guides/custom-components.md
+      - 테마 및 스타일링: guides/theming.md
+      - MCP 위의 A2UI: guides/a2ui_over_mcp.md
+  - 레퍼런스:
+      - 컴포넌트 갤러리: reference/components.md
+      - 메시지 유형: reference/messages.md
+      - 렌더러: reference/renderers.md
+      - 에이전트: reference/agents.md
+  - 사양:
       - v0.8 (안정판):
           - A2UI 사양: specification/v0.8-a2ui.md
           - A2A 확장: specification/v0.8-a2a-extension.md
       - v0.9 (초안):
           - A2UI 사양: specification/v0.9-a2ui.md
           - 발전 가이드: specification/v0.9-evolution-guide.md
-  - 렌더러 (클라이언트): renderers.md
-  - 전송 방식 (메시지 전달): transports.md
-  - 에이전트 (서버 측): agents.md
-  - 커뮤니티: community.md
+  - 생태계:
+      - A2UI 실제 사례: ecosystem/a2ui-in-the-world.md
+      - 커뮤니티 렌더러: ecosystem/renderers.md
+      - 커뮤니티: ecosystem/community.md
   - 로드맵: roadmap.md
-  - 레퍼런스:
-      - 컴포넌트 레퍼런스: reference/components.md
-      - 메시지 레퍼런스: reference/messages.md
 
 # Repository
 repo_name: google/A2UI
@@ -174,12 +180,13 @@ plugins:
   - search
   - macros
   # - include-markdown
-  # - mermaid2
-  # - llmstxt:
-  #     full_output: llms-full.txt
-  #     sections:
-  #       "Specification":
-  #         - a2ui_protocol.md
-  # - redirects:
-  #     redirect_maps:
-  #       "index.md": "a2ui_protocol.md"
+  - mermaid2
+  - redirects:
+      redirect_maps:
+        'renderers.md': 'reference/renderers.md'
+        'agents.md': 'reference/agents.md'
+        'transports.md': 'concepts/transports.md'
+        'community.md': 'ecosystem/community.md'
+        'introduction/where-is-it-used.md': 'ecosystem/a2ui-in-the-world.md'
+        'catalogs.md': 'concepts/catalogs.md'
+        'client_to_server_actions.md': 'concepts/client_to_server_actions.md'
