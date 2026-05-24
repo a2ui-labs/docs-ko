@@ -16,7 +16,7 @@
 - 크로스 플랫폼: 웹, 모바일, 데스크톱 지원
 - 상호운용성: 오픈 소스이며 동일한 명세로 여러 렌더러 지원
 
-**시작하기:** [클라이언트 설정](../guides/client-setup.md) | [테마 설정](../guides/theming.md) | [커스텀 컴포넌트](../guides/custom-components.md)
+**시작하기:** [클라이언트 설정](../guides/client-setup.md) | [테마 설정](../guides/theming.md) | [커스텀 컴포넌트](../guides/authoring-components.md)
 
 ### 2. 에이전트 개발자 (백엔드/AI)
 
@@ -46,7 +46,7 @@
 - 확장성: 커스텀 컴포넌트 카탈로그 지원
 - 오픈 소스 (Apache 2.0)
 
-**시작하기:** [커뮤니티](../community.md) | [로드맵](../roadmap.md)
+**시작하기:** [커뮤니티](../ecosystem/community.md) | [로드맵](../roadmap.md)
 
 ---
 

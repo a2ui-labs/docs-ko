@@ -73,7 +73,7 @@ Flutter는 네이티브 A2UI 렌더링을 제공하는 GenUI SDK를 사용합니
 - **WebSockets**: 양방향 실시간 통신
 - **A2A 프로토콜**: A2UI를 지원하는 표준화된 에이전트 간 통신
 
-**참고:** [전송 계층 가이드](../transports.md)
+**참고:** [전송 계층 가이드](../concepts/transports.md)
 
 ## 사용자 액션 처리하기
 
@@ -99,6 +99,6 @@ TODO: 오류 처리 예제 추가 예정
 
 - **[퀵스타트](../quickstart.md)**: 데모 애플리케이션 시도해 보기
 - **[테마 및 스타일링](theming.md)**: 룩앤필 커스터마이징
-- **[커스텀 컴포넌트](custom-components.md)**: 컴포넌트 카탈로그 확장
+- **[커스텀 컴포넌트](authoring-components.md)**: 컴포넌트 카탈로그 확장
 - **[에이전트 개발](agent-development.md)**: A2UI를 생성하는 에이전트 구축
 - **[참조 문서](../reference/messages.md)**: 프로토콜 심층 분석

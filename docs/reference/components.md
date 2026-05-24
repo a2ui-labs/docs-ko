@@ -272,5 +272,5 @@ npm start -- gallery
 ## 추가 학습 자료
 
 - **[표준 카탈로그 정의](../../specification/0.9/json/standard_catalog_definition.json)**: 전체 기술 명세
-- **[커스텀 컴포넌트 가이드](../guides/custom-components.md)**: 나만의 컴포넌트 빌드하기
+- **[커스텀 컴포넌트 가이드](../guides/authoring-components.md)**: 나만의 컴포넌트 빌드하기
 - **[테마 가이드](../guides/theming.md)**: 브랜드에 맞춰 컴포넌트 스타일링하기

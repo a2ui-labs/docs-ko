@@ -23,12 +23,12 @@ extra:
     provider: google
     property: G-YX9TPV8DCC
   consent:
-      title: Cookie consent
-      description: >-
-        We use cookies to recognize repeated visits and preferences,
-        as well as to measure the effectiveness of our documentation and
-        whether users find the information they need. With your consent,
-        you're helping us to make our documentation better.
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize repeated visits and preferences,
+      as well as to measure the effectiveness of our documentation and
+      whether users find the information they need. With your consent,
+      you're helping us to make our documentation better.
 
 # Navigation
 nav:
@@ -46,32 +46,39 @@ nav:
       - 컴포넌트 및 구조: concepts/components.md
       - 데이터 바인딩: concepts/data-binding.md
       - 카탈로그: concepts/catalogs.md
-      - 클라이언트-서버 액션: concepts/client_to_server_actions.md
       - 전송 계층: concepts/transports.md
+      - 액션: concepts/actions.md
   - 개발자 가이드:
       - 클라이언트 설정: guides/client-setup.md
       - 에이전트 개발: guides/agent-development.md
+      - 모든 에이전트 프레임워크에서 A2UI 사용 (AG-UI): guides/a2ui-with-any-agent-framework.md
       - 렌더러 개발: guides/renderer-development.md
-      - 커스텀 컴포넌트: guides/custom-components.md
+      - 나만의 카탈로그 정의: guides/defining-your-own-catalog.md
+      - 커스텀 컴포넌트 작성: guides/authoring-components.md
       - 테마 및 스타일링: guides/theming.md
       - MCP 위의 A2UI: guides/a2ui_over_mcp.md
+      - A2UI 안의 MCP 앱: guides/mcp-apps-in-a2ui.md
+      - MCP 앱 안의 A2UI: guides/a2ui-in-mcp-apps.md
   - 레퍼런스:
       - 컴포넌트 갤러리: reference/components.md
-      - 메시지 유형: reference/messages.md
-      - 렌더러: reference/renderers.md
-      - 에이전트: reference/agents.md
+      - 메시지 레퍼런스: reference/messages.md
+      - 렌더러 (클라이언트): reference/renderers.md
+      - 에이전트 (서버 측): reference/agents.md
   - 사양:
       - v0.8 (안정판):
-          - A2UI 사양: specification/v0.8-a2ui.md
+          - A2UI 프로토콜: specification/v0.8-a2ui.md
           - A2A 확장: specification/v0.8-a2a-extension.md
-      - v0.9 (초안):
-          - A2UI 사양: specification/v0.9-a2ui.md
+      - v0.9 (현재):
+          - A2UI 프로토콜: specification/v0.9-a2ui.md
           - 발전 가이드: specification/v0.9-evolution-guide.md
   - 생태계:
       - A2UI 실제 사례: ecosystem/a2ui-in-the-world.md
       - 커뮤니티 렌더러: ecosystem/renderers.md
       - 커뮤니티: ecosystem/community.md
   - 로드맵: roadmap.md
+
+exclude_docs: |
+  scripts/**
 
 # Repository
 repo_name: google/A2UI
@@ -84,7 +91,6 @@ copyright: Copyright Google 2025&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//policies.goo
 # Custom CSS
 extra_css:
   - stylesheets/custom.css
-
 
 # Configuration
 theme:
@@ -164,7 +170,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
@@ -175,6 +181,9 @@ markdown_extensions:
   - toc:
       permalink: true
 
+hooks:
+  - hooks.py
+
 # Plugins
 plugins:
   - search
@@ -183,10 +192,21 @@ plugins:
   - mermaid2
   - redirects:
       redirect_maps:
-        'renderers.md': 'reference/renderers.md'
-        'agents.md': 'reference/agents.md'
-        'transports.md': 'concepts/transports.md'
-        'community.md': 'ecosystem/community.md'
-        'introduction/where-is-it-used.md': 'ecosystem/a2ui-in-the-world.md'
-        'catalogs.md': 'concepts/catalogs.md'
-        'client_to_server_actions.md': 'concepts/client_to_server_actions.md'
+        # Files moved in docs-file-org reorganization
+        "catalogs.md": "concepts/catalogs.md"
+        "transports.md": "concepts/transports.md"
+        "actions.md": "concepts/actions.md"
+        "renderers.md": "reference/renderers.md"
+        "agents.md": "reference/agents.md"
+        "community.md": "ecosystem/community.md"
+        "introduction/where-is-it-used.md": "ecosystem/a2ui-in-the-world.md"
+        "guides/guide_a2ui_dynamic_mcp.md": "guides/a2ui-in-mcp-apps.md"
+        "guides/mcp-apps-in-a2ui-surface.md": "guides/mcp-apps-in-a2ui.md"
+        "concepts/client_to_server_actions.md": "concepts/actions.md"
+        "client_to_server_actions.md": "concepts/actions.md"
+        "guides/custom-components.md": "guides/authoring-components.md"
+  # - llmstxt:
+  #     full_output: llms-full.txt
+  #     sections:
+  #       "Specification":
+  #         - a2ui_protocol.md

@@ -50,4 +50,4 @@ LLM 프롬프트에 A2UI 스키마를 포함하고, JSONL 메시지를 생성하
 - **[AG UI / CopilotKit](https://ag-ui.com/)** - A2UI 렌더링 기능이 포함된 풀스택 React 프레임워크
 - **[Flutter GenUI SDK](https://docs.flutter.dev/ai/genui)** - 크로스 플랫폼 생성형 UI (내부적으로 A2UI 사용)
 
-**다음 단계:** [에이전트 UI 생태계](agent-ui-ecosystem.md) | [A2UI는 어디에서 사용되나요?](where-is-it-used.md)
+**다음 단계:** [에이전트 UI 생태계](agent-ui-ecosystem.md) | [A2UI는 어디에서 사용되나요?](../ecosystem/a2ui-in-the-world.md)
