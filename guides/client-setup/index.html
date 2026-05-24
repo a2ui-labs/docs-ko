@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://a2ui-labs.github.io/docs-ko/guides/client-setup/">
       
       
-        <link rel="prev" href="../../concepts/transports/">
+        <link rel="prev" href="../../concepts/actions/">
       
       
         <link rel="next" href="../agent-development/">
@@ -797,14 +797,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/client_to_server_actions/" class="md-nav__link">
+      <a href="../../concepts/transports/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    클라이언트-서버 액션
+    전송 계층
   
 
     
@@ -825,14 +825,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/transports/" class="md-nav__link">
+      <a href="../../concepts/actions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    전송 계층
+    액션
   
 
     
@@ -863,6 +863,14 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1114,6 +1122,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../a2ui-with-any-agent-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    모든 에이전트 프레임워크에서 A2UI 사용 (AG-UI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../renderer-development/" class="md-nav__link">
         
   
@@ -1142,14 +1178,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-components/" class="md-nav__link">
+      <a href="../defining-your-own-catalog/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    커스텀 컴포넌트
+    나만의 카탈로그 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring-components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    커스텀 컴포넌트 작성
   
 
     
@@ -1206,6 +1270,62 @@
     
   
     MCP 위의 A2UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-apps-in-a2ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A2UI 안의 MCP 앱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a2ui-in-mcp-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP 앱 안의 A2UI
   
 
     
@@ -1325,7 +1445,7 @@
   <span class="md-ellipsis">
     
   
-    메시지 유형
+    메시지 레퍼런스
   
 
     
@@ -1353,7 +1473,7 @@
   <span class="md-ellipsis">
     
   
-    렌더러
+    렌더러 (클라이언트)
   
 
     
@@ -1381,7 +1501,7 @@
   <span class="md-ellipsis">
     
   
-    에이전트
+    에이전트 (서버 측)
   
 
     
@@ -1522,7 +1642,7 @@
   <span class="md-ellipsis">
     
   
-    A2UI 사양
+    A2UI 프로토콜
   
 
     
@@ -1603,7 +1723,7 @@
   <span class="md-ellipsis">
     
   
-    v0.9 (초안)
+    v0.9 (현재)
   
 
     
@@ -1619,7 +1739,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    v0.9 (초안)
+    v0.9 (현재)
   
 
           </label>
@@ -1639,7 +1759,7 @@
   <span class="md-ellipsis">
     
   
-    A2UI 사양
+    A2UI 프로토콜
   
 
     
@@ -2147,7 +2267,7 @@
 - <strong>Server-Sent Events (SSE)</strong>: 서버에서 클라이언트로의 단방향 스트리밍
 - <strong>WebSockets</strong>: 양방향 실시간 통신
 - <strong>A2A 프로토콜</strong>: A2UI를 지원하는 표준화된 에이전트 간 통신</p>
-<p><strong>참고:</strong> <a href="../transports.md">전송 계층 가이드</a></p>
+<p><strong>참고:</strong> <a href="../../concepts/transports/">전송 계층 가이드</a></p>
 <h2 id="_4">사용자 액션 처리하기<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>사용자가 A2UI 컴포넌트와 상호작용(버튼 클릭, 양식 제출 등)할 때 클라이언트는 다음을 수행합니다:
 1. 컴포넌트로부터 액션 이벤트 캡처
@@ -2166,7 +2286,7 @@
 <ul>
 <li><strong><a href="../../quickstart/">퀵스타트</a></strong>: 데모 애플리케이션 시도해 보기</li>
 <li><strong><a href="../theming/">테마 및 스타일링</a></strong>: 룩앤필 커스터마이징</li>
-<li><strong><a href="../custom-components/">커스텀 컴포넌트</a></strong>: 컴포넌트 카탈로그 확장</li>
+<li><strong><a href="../authoring-components/">커스텀 컴포넌트</a></strong>: 컴포넌트 카탈로그 확장</li>
 <li><strong><a href="../agent-development/">에이전트 개발</a></strong>: A2UI를 생성하는 에이전트 구축</li>
 <li><strong><a href="../../reference/messages/">참조 문서</a></strong>: 프로토콜 심층 분석</li>
 </ul>
@@ -2209,7 +2329,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../concepts/transports/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 전송 계층">
+          <a href="../../concepts/actions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 액션">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2219,7 +2339,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                전송 계층
+                액션
               </div>
             </div>
           </a>
