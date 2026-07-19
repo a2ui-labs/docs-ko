@@ -2,13 +2,13 @@
 
 A2UI는 에이전트가 생성한 업데이트 가능한 UI를 표현하기 위해 최적화된 형식과 초기 렌더러 세트를 갖춘 오픈 소스 프로젝트로, 에이전트가 풍부한 사용자 인터페이스를 생성하거나 채울 수 있도록 합니다.
 
-<img src="docs/assets/a2ui_gallery_examples.png" alt="A2UI 컴포넌트 갤러리" height="400">
+<img src="docs/public/assets/a2ui_gallery_examples.png" alt="A2UI 컴포넌트 갤러리" height="400">
 
 *A2UI로 렌더링된 카드 갤러리. A2UI가 달성할 수 있는 다양한 UI 구성을 보여줍니다.*
 
 ## ⚠️ 상태: 초기 단계 퍼블릭 프리뷰
 
-> **참고:** A2UI는 현재 **v0.8 (퍼블릭 프리뷰)** 단계입니다. 명세와 구현체는 작동 가능한 상태이지만 여전히 발전 중입니다. 협업을 장려하고, 피드백을 수집하며, 기여(예: 클라이언트 렌더러)를 요청하기 위해 프로젝트를 공개합니다. 변경 사항이 발생할 수 있음을 유의해 주세요.
+> **참고:** A2UI의 현재 프로덕션 릴리스는 안정된 v0.9 프로토콜 패밀리의 패치 릴리스인 **v0.9.1**입니다. v1.0 명세는 릴리스 후보(release candidate) 단계이며, v0.8은 레거시입니다. 명세와 구현체는 작동 가능한 상태이지만 여전히 발전 중입니다. 협업을 장려하고, 피드백을 수집하며, 기여(예: 클라이언트 렌더러)를 요청하기 위해 프로젝트를 공개합니다. 변경 사항이 발생할 수 있음을 유의해 주세요.
 
 ## 요약
 
@@ -42,7 +42,7 @@ A2UI는 에이전트로부터의 상호 운용 가능하고 크로스 플랫폼�
 A2UI 흐름은 UI 생성과 UI 실행을 분리합니다:
 
 1. **생성(Generation):** 에이전트(Gemini 또는 다른 LLM 사용)가 UI 컴포넌트의 구성과 속성을 설명하는 JSON 페이로드인 `A2UI 응답`을 생성하거나 사전 생성된 응답을 사용합니다.
-2. **전송(Transport):** 이 메시지는 클라이언트 애플리케이션(A2A, AG UI 등을 통해)으로 전송됩니다.
+2. **전송(Transport):** 이 메시지는 클라이언트 애플리케이션(A2A, AG-UI 등을 통해)으로 전송됩니다.
 3. **해석(Resolution):** 클라이언트의 **A2UI 렌더러**가 JSON을 파싱합니다.
 4. **렌더링(Rendering):** 렌더러가 추상 컴포넌트(예: `type: 'text-field'`)를 클라이언트 코드베이스의 구체적인 구현으로 매핑합니다.
 
@@ -50,60 +50,60 @@ A2UI 흐름은 UI 생성과 UI 실행을 분리합니다:
 
 A2UI는 가벼운 형식이 되도록 설계되었지만, 더 큰 생태계에 적합합니다:
 
-* **전송(Transports):** **A2A 프로토콜** 및 **AG UI**와 호환됩니다.
+* **전송(Transports):** **A2A 프로토콜** 및 **AG-UI**와 호환됩니다.
 * **LLM:** JSON 출력을 생성할 수 있는 모든 모델에서 생성 가능합니다.
 * **호스트 프레임워크:** 지원되는 프레임워크(현재 Web 또는 Flutter)로 구축된 호스트 애플리케이션이 필요합니다.
 
 ## 시작하기
 
-A2UI를 이해하는 가장 좋은 방법은 샘플을 실행해 보는 것입니다.
+원하는 시작 지점에 맞는 경로를 선택하세요:
 
-### 사전 요구 사항
+| 경로                                                                                                                             | 얻을 수 있는 것                                                                                                                              | 소요 시간 |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
+| 🍜 **[퀵스타트 레스토랑 찾기 데모](https://a2ui.org/quickstart/)**                                                                        | Gemini 기반 ADK 에이전트와 Lit 렌더러로 로컬에서 풀스택 A2UI를 실행합니다. A2UI를 처음부터 끝까지 배우고 자신의 사용 사례에 맞게 커스터마이즈해 보세요.                                        | ~5분 |
+| ⚛️ **[모든 에이전트 프레임워크 및 하니스에서 A2UI 사용하기](docs/public/guides/a2ui-with-any-agent-framework.md)**                                  | 원하는 프레임워크나 하니스로 AG-UI 앱 또는 하니스를 스캐폴딩한 뒤, AG-UI를 통해 A2UI 렌더링을 활성화합니다.                                                                       | ~5분 |
+| 🎨 **[A2UI Composer](https://a2ui-composer.ag-ui.com/)** · **[Widget Builder](https://go.copilotkit.ai/A2UI-widget-builder)** | 시각적 편집기로 A2UI JSON을 생성하고 이를 아무 에이전트 프롬프트에나 붙여넣으세요 — 설치가 필요 없습니다.                                                                            | ~1분 |
+| 🎬 **[A2UI Theater](https://a2ui-composer.ag-ui.com/theater)**                                                                | Lit, React, Angular 렌더러 전반에 걸쳐 미리 준비된 A2UI 스트리밍 시나리오를 단계별로 살펴보세요 — 설치가 필요 없습니다.                                                              | ~1분 |
 
-* Node.js (웹 클라이언트용)
-* Python (에이전트 샘플용)
-* 샘플을 실행하려면 유효한 [Gemini API 키](https://aistudio.google.com/)가 필요합니다.
+### 레스토랑 찾기 데모 — 요약
 
-### 레스토랑 찾기 데모 실행하기
+사전 요구 사항: Node.js 18+([Corepack](https://nodejs.org/api/corepack.html) 활성화), [uv](https://docs.astral.sh/uv/), 그리고 [Gemini API 키](https://aistudio.google.com/apikey).
 
-1. **저장소 복제:**
+```bash
+git clone https://github.com/a2ui-project/a2ui.git
+cd a2ui
+export GEMINI_API_KEY="your_gemini_api_key"
 
-    ```bash
-    git clone https://github.com/google/A2UI.git
-    cd A2UI
-    ```
+# Corepack 활성화 (macOS Homebrew 사용자는 아래 팁 참고)
+corepack enable
 
-2. **API 키 설정:**
+yarn install
+cd samples/client/lit
+yarn demo:restaurant
+```
 
-    ```bash
-    export GEMINI_API_KEY="your_gemini_api_key"
-    ```
+> [!TIP]
+> **macOS Homebrew 사용자:** 이전에 독립형 패키지 매니저를 설치했다면, Corepack이 프로젝트별로 버전을 관리할 수 있도록 설치 전에 충돌을 먼저 해제하세요:
+>
+> ```bash
+> brew unlink yarn pnpm
+> brew install corepack
+> corepack enable
+> ```
 
-3. **에이전트(백엔드) 실행:**
+이 명령들은 여러 워크스페이스에 걸쳐 의존성을 설치하고, 렌더러를 빌드하고, Python 에이전트를 시작한 뒤 `http://localhost:5173`에서 클라이언트를 엽니다. 단계별 안내, 다른 데모, 문제 해결 방법은 **[전체 퀵스타트](docs/public/quickstart.md)**를 참고하세요.
 
-    ```bash
-    cd samples/agent/adk/restaurant_finder
-    uv run .
-    ```
+### 모든 에이전트 프레임워크 및 하니스에서 A2UI 사용하기 — 요약
 
-4. **클라이언트(프론트엔드) 실행:**
-    새 터미널 창을 엽니다:
+```bash
+npx create-ag-ui-app@latest
+```
 
-    ```bash
-    # Lit 렌더러 설치 및 빌드
-    cd renderers/lit
-    npm install
-    npm run build
+원하는 프레임워크나 하니스(Google Chat, ADK, LangGraph, CrewAI, Mastra, Strands, Slack, Teams 등)에서 AG-UI CLI를 사용한 뒤, **[AG-UI 가이드](docs/public/guides/a2ui-with-any-agent-framework.md)**를 따라 A2UI 렌더링을 활성화하세요. 일부 스캐폴드 경로는 내부적으로 Next.js 기반 [CopilotKit의 A2UI 런타임](https://docs.copilotkit.ai/generative-ui/a2ui)을 사용하지만, 설치 표면은 AG-UI를 우선으로 합니다.
 
-    # 쉘 클라이언트 설치 및 실행
-    cd ../../samples/client/lit/shell
-    npm install
-    npm run dev
-    ```
+### 다른 렌더러
 
-Flutter 개발자는 내부적으로 A2UI를 사용하는 [GenUI SDK](https://github.com/flutter/genui)를 확인해 보세요.
-
-CopilotKit에는 체험해 볼 수 있는 공개 [A2UI 위젯 빌더](https://go.copilotkit.ai/A2UI-widget-builder)도 있습니다.
+Flutter의 경우, 내부적으로 A2UI를 사용하는 [GenUI SDK](https://github.com/flutter/genui)를 확인해 보세요. 클라이언트 구현체 전체 목록은 [docs/public/reference/renderers.md](docs/public/reference/renderers.md)를 참고하세요.
 
 ## 로드맵
 
