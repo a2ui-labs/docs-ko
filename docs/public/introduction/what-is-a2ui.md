@@ -40,24 +40,129 @@ A2UI는 다음과 같은 기능을 수행하는 UI 설명 JSON 메시지입니�
 
 ### 예시
 
-```json
-{"surfaceUpdate": {"surfaceId": "booking", "components": [
-  {"id": "title", "component": {"Text": {"text": {"literalString": "테이블 예약하기"}, "usageHint": "h1"}}},
-  {"id": "datetime", "component": {"DateTimeInput": {"value": {"path": "/booking/date"}, "enableDate": true}}},
-  {"id": "submit-text", "component": {"Text": {"text": {"literalString": "확인"}}}},
-  {"id": "submit-btn", "component": {"Button": {"child": "submit-text", "action": {"name": "confirm_booking"}}}}
-]}}
-```
+=== "v0.8 (레거시)"
 
-```json
-{"dataModelUpdate": {"surfaceId": "booking", "contents": [
-  {"key": "booking", "valueMap": [{"key": "date", "valueString": "2025-12-16T19:00:00Z"}]}
-]}}
-```
+    ```jsonl
+    {
+      "surfaceUpdate": {
+        "surfaceId": "booking",
+        "components": [
+          {
+            "id": "title",
+            "component": {
+              "Text": {
+                "text": { "literalString": "테이블 예약하기" },
+                "usageHint": "h1"
+              }
+            }
+          },
+          {
+            "id": "datetime",
+            "component": {
+              "DateTimeInput": {
+                "value": { "path": "/booking/date" },
+                "enableDate": true
+              }
+            }
+          },
+          {
+            "id": "submit-text",
+            "component": {
+              "Text": {
+                "text": { "literalString": "확인" }
+              }
+            }
+          },
+          {
+            "id": "submit-btn",
+            "component": {
+              "Button": {
+                "child": "submit-text",
+                "action": { "name": "confirm_booking" }
+              }
+            }
+          }
+        ]
+      }
+    }
+    {
+      "dataModelUpdate": {
+        "surfaceId": "booking",
+        "contents": [
+          {
+            "key": "booking",
+            "valueMap": [
+              { "key": "date", "valueString": "2025-12-16T19:00:00Z" }
+            ]
+          }
+        ]
+      }
+    }
+    {
+      "beginRendering": {
+        "surfaceId": "booking",
+        "root": "title"
+      }
+    }
+    ```
 
-```json
-{"beginRendering": {"surfaceId": "booking", "root": "title"}}
-```
+=== "v0.9 (안정판)"
+
+    ```jsonl
+    {
+      "version": "v0.9.1",
+      "createSurface": {
+        "surfaceId": "booking",
+        "catalogId": "https://a2ui.org/specification/v0_9_1/catalogs/basic/catalog.json"
+      }
+    }
+    {
+      "version": "v0.9.1",
+      "updateComponents": {
+        "surfaceId": "booking",
+        "components": [
+          {
+            "id": "title",
+            "component": "Text",
+            "text": "테이블 예약하기",
+            "variant": "h1"
+          },
+          {
+            "id": "datetime",
+            "component": "DateTimeInput",
+            "value": { "path": "/booking/date" },
+            "enableDate": true
+          },
+          {
+            "id": "submit-text",
+            "component": "Text",
+            "text": "확인"
+          },
+          {
+            "id": "submit-btn",
+            "component": "Button",
+            "child": "submit-text",
+            "variant": "primary",
+            "action": {
+              "event": { "name": "confirm_booking" }
+            }
+          }
+        ]
+      }
+    }
+    {
+      "version": "v0.9.1",
+      "updateDataModel": {
+        "surfaceId": "booking",
+        "path": "/booking",
+        "value": {
+          "date": "2025-12-16T19:00:00Z"
+        }
+      }
+    }
+    ```
+
+    A2UI 메시지는 서피스를 초기화하기 위해 `createSurface`를 사용하며, 평평한(flat) 컴포넌트 구조를 사용하고, `version` 필드를 포함합니다.
 
 클라이언트는 이러한 메시지를 네이티브 컴포넌트(Angular, Flutter, React 등)로 렌더링합니다.
 

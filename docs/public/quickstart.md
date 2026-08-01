@@ -186,7 +186,7 @@ yarn demo:restaurant
     {"version": "v0.9.1", "updateDataModel": {"surfaceId": "main", "path": "/reservation", "value": {"date": "2025-12-15", "time": "19:00", "guests": 2}}}
     ```
 
-    참고: v0.9에서는 `createSurface`가 `beginRendering`을 대체하고, 컴포넌트는 더 평평한 형식을 사용하며, 데이터 모델은 typed adjacency list 대신 일반 JSON 값을 사용합니다.
+    참고: 컴포넌트는 평평한(flat) 형식을 사용하고, 데이터 모델은 일반 JSON 값을 사용합니다.
 
 > 💡 **그냥 JSON입니다**
 >
@@ -200,21 +200,29 @@ yarn demo:restaurant
 
 사용 가능한 모든 A2UI 컴포넌트를 확인해 보세요.
 
+새로 clone한 저장소에서 갤러리를 실행하는 경우, 먼저 갤러리와 그 워크스페이스 의존성을 빌드하세요.
+
 ```bash
-yarn start gallery
+cd renderers/lit/a2ui_explorer
+yarn build
+```
+
+갤러리를 시작합니다.
+
+```bash
+yarn dev
 ```
 
 이 클라이언트 전용 데모는 표준 컴포넌트(Card, Button, TextField, Timeline 등)를 라이브 예시와 코드 샘플과 함께 보여줍니다.
 
-### 연락처 조회 데모
+### 다른 언어와 프레임워크
 
-다른 에이전트 사례를 확인해 보세요.
+이 가이드는 Lit 클라이언트를 예시로 사용하지만, A2UI는 `samples/client` 디렉터리에서 다른 인기 프레임워크용 샘플도 제공합니다.
 
-```bash
-npm run demo:contact
-```
+- **Angular**: `samples/client/angular`
+- **React**: `samples/client/react`
 
-이 데모는 검색 양식과 결과 목록을 생성하는 연락처 조회 에이전트를 보여줍니다.
+사용 가능한 모든 클라이언트 구현을 확인하려면 [samples/client](../../samples/client) 디렉터리를 살펴보세요.
 
 ## 다음 단계
 

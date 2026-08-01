@@ -106,45 +106,77 @@
 
 ## 2. 컴포넌트 구현(클라이언트)
 
-클라이언트 측 프레임워크를 사용해 컴포넌트를 구현합니다. Angular의 경우 컴포넌트는 `@a2ui/angular`가 제공하는 `DynamicComponent`를 확장해야 합니다.
+클라이언트 측 프레임워크를 사용해 컴포넌트를 구현합니다. Angular의 경우 컴포넌트는 `@a2ui/angular/v0_9`가 제공하는 `CatalogComponent`를 확장해야 합니다.
 
-[`orchestrator`](../../../samples/community/client/angular/projects/orchestrator/README.md) 예시에서 `Chart` 컴포넌트는 [`chart.ts`](../../../samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/chart.ts)에 정의되어 있습니다.
+`rizzcharts` 예시에서 `Chart` 컴포넌트는 `chart.ts`에 정의되어 있습니다.
 
-{% raw %}
+먼저 TypeScript로 컴포넌트 API를 정의합니다. 이는 1단계에서 정의한 JSON Schema와 일치해야 합니다.
 
 ```typescript
-import {DynamicComponent} from '@a2ui/angular';
-import * as Primitives from '@a2ui/web_core/types/primitives';
-import * as Types from '@a2ui/web_core/types/types';
-import {Component, computed, input, Signal, signal} from '@angular/core';
+// api.ts
+import {ComponentApi} from '@a2ui/web_core/v0_9';
+import {z} from 'zod';
+
+export const ChartApi = {
+  name: 'Chart',
+  schema: z.object({
+    type: z.enum(['doughnut', 'pie']),
+    title: z.string().optional(),
+    chartData: z.array(
+      z.object({
+        label: z.string(),
+        value: z.number(),
+        drillDown: z.array(
+          z.object({
+            label: z.string(),
+            value: z.number(),
+          })
+        ).optional(),
+      })
+    ),
+  }).strict(),
+} satisfies ComponentApi;
+```
+
+이제 Angular 컴포넌트를 구현합니다.
+
+```typescript
+import {CatalogComponent} from '@a2ui/angular/v0_9';
+import {Component, computed} from '@angular/core';
+import {BaseChartDirective} from 'ng2-charts';
+import {ChartApi} from './api';
 
 @Component({
   selector: 'a2ui-chart',
+  imports: [BaseChartDirective],
   template: `
     <div>
-      <h2>{{ resolvedTitle() }}</h2>
-      <canvas baseChart [data]="currentData()" [type]="chartType()"></canvas>
+      <h2>{{ title() }}</h2>
+      <canvas baseChart [data]="chartData()" [type]="chartType()"></canvas>
     </div>
   `,
 })
-export class Chart extends DynamicComponent<Types.CustomNode> {
-  readonly type = input.required<string>();
-  protected readonly chartType = computed(() => this.type() as ChartType);
-
-  readonly title = input<Primitives.StringValue | null>();
-  protected readonly resolvedTitle = computed(() => super.resolvePrimitive(this.title() ?? null));
-
-  readonly chartData = input.required<Primitives.StringValue | null>();
-  // ... data resolution logic using super.resolvePrimitive for data paths
+export class Chart extends CatalogComponent<typeof ChartApi> {
+  protected readonly chartType = computed(() => this.props()['type']?.value() || 'pie');
+  protected readonly title = computed(() => this.props()['title']?.value() || '');
+  protected readonly chartData = computed(() => {
+    const rawData = this.props()['chartData']?.value() || [];
+    return {
+      labels: rawData.map(item => item.label),
+      datasets: [
+        {
+          data: rawData.map(item => item.value),
+        },
+      ],
+    };
+  });
 }
 ```
 
-{% endraw %}
-
 컴포넌트를 구현할 때는 다음 핵심 사항을 기억하세요.
 
-- **`DynamicComponent` 확장**: 데이터 바인딩 해석을 위한 `resolvePrimitive`에 접근할 수 있습니다.
-- **Angular Inputs 사용**: 스키마의 속성을 Angular input에 매핑합니다.
+- **`CatalogComponent` 확장**: 타입 안전한 `props` signal input에 접근할 수 있습니다.
+- **`props()` Signal 사용**: `this.props()['propertyName']?.value()`를 통해 해석된 속성에 반응형으로 접근합니다. 프레임워크가 데이터 바인딩과 표현식 해석을 자동으로 처리합니다.
 
 ---
 
@@ -152,32 +184,28 @@ export class Chart extends DynamicComponent<Types.CustomNode> {
 
 컴포넌트를 구현한 뒤에는 클라이언트 카탈로그에 등록합니다. 이렇게 하면 에이전트가 사용하는 컴포넌트 이름이 구현 클래스에 매핑됩니다.
 
-[`orchestrator`](../../../samples/community/client/angular/projects/orchestrator/README.md) 예시에서는 [`catalog.ts`](../../../samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/catalog.ts)에서 이 작업을 수행합니다.
+`AngularCatalog` 클래스를 사용해 카탈로그를 정의합니다.
 
 ```typescript
-import {Catalog, DEFAULT_CATALOG} from '@a2ui/angular';
-import {inputBinding} from '@angular/core';
+import {AngularCatalog, BASIC_COMPONENTS, BASIC_FUNCTIONS} from '@a2ui/angular/v0_9';
+import {Chart} from './chart';
+import {ChartApi} from './api';
 
-export const RIZZ_CHARTS_CATALOG = {
-  ...DEFAULT_CATALOG,
-  Chart: {
-    type: () => import('./chart').then(r => r.Chart),
-    bindings: ({properties}) => [
-      inputBinding('type', () => ('type' in properties && properties['type']) || undefined),
-      inputBinding('title', () => ('title' in properties && properties['title']) || undefined),
-      inputBinding(
-        'chartData',
-        () => ('chartData' in properties && properties['chartData']) || undefined,
-      ),
-    ],
-  },
-} as Catalog;
+const customChartComponent = {
+  ...ChartApi,
+  component: Chart
+};
+
+export const RIZZ_CHARTS_CATALOG = new AngularCatalog(
+  'https://github.com/.../rizzcharts_catalog_definition.json',
+  [...BASIC_COMPONENTS, customChartComponent],
+  BASIC_FUNCTIONS
+);
 ```
 
 등록 시 핵심 사항은 다음과 같습니다.
 
-- **Lazy Loading**: `import()`를 사용해 컴포넌트 코드를 lazy-load합니다.
-- **Input Bindings**: `inputBinding`을 사용해 스키마의 속성을 Angular input에 매핑합니다.
+- **즉시(Eager) 등록**: 컴포넌트 클래스는 카탈로그 정의에 직접 등록됩니다.
 
 ---
 

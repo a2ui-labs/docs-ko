@@ -86,7 +86,73 @@ A2UI 카탈로그는 LLM 추론과 의존성 관리를 단순하게 하기 위�
 
 ### 렌더러 구현
 
-클라이언트 렌더러는 스키마 정의를 실제 코드로 매핑해 카탈로그를 구현합니다. 예를 들어 Angular, Lit, React, Flutter 렌더러는 각자의 네이티브 위젯에 맞게 카탈로그 정의를 연결합니다.
+클라이언트 렌더러는 스키마 정의를 실제 코드로 매핑해 카탈로그를 구현합니다.
+
+먼저 카탈로그 스키마에 맞춰 TypeScript로 컴포넌트 API를 정의합니다.
+
+```typescript
+// api.ts
+import {ComponentApi} from '@a2ui/web_core/v0_9';
+import {z} from 'zod';
+
+export const HelloWorldBannerApi = {
+  name: 'HelloWorldBanner',
+  schema: z.object({
+    message: z.string(),
+    backgroundColor: z.string().default('#f0f0f0'),
+  }).strict(),
+} satisfies ComponentApi;
+```
+
+다음으로 `CatalogComponent`를 확장해 컴포넌트를 구현합니다.
+
+```typescript
+// hello_world_banner.ts
+import {CatalogComponent} from '@a2ui/angular/v0_9';
+import {Component, computed} from '@angular/core';
+import {HelloWorldBannerApi} from './api';
+
+@Component({
+  selector: 'hello-world-banner',
+  template: `
+    <div [style.background-color]="backgroundColor()">
+      <h2>Hello World Banner</h2>
+      <p>{{ message() }}</p>
+    </div>
+  `,
+})
+export class HelloWorldBanner extends CatalogComponent<typeof HelloWorldBannerApi> {
+  protected readonly message = computed(() => this.props()['message']?.value() || '');
+  protected readonly backgroundColor = computed(() => this.props()['backgroundColor']?.value() || '#f0f0f0');
+}
+```
+
+마지막으로 커스텀 컴포넌트를 `AngularCatalog`에 등록합니다.
+
+```typescript
+// catalog.ts
+import {AngularCatalog, BASIC_COMPONENTS, BASIC_FUNCTIONS} from '@a2ui/angular/v0_9';
+import {HelloWorldBanner} from './hello_world_banner';
+import {HelloWorldBannerApi} from './api';
+
+const customBannerComponent = {
+  ...HelloWorldBannerApi,
+  component: HelloWorldBanner
+};
+
+export const MY_CATALOG = new AngularCatalog(
+  'https://github.com/.../hello_world/v1/catalog.json',
+  [...BASIC_COMPONENTS, customBannerComponent],
+  BASIC_FUNCTIONS
+);
+```
+
+[Orchestrator 데모](../../../samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/catalog.ts)에서 클라이언트 렌더러의 동작 예시를 확인할 수 있습니다.
+
+> [!NOTE]
+> Orchestrator 데모는 현재 v0.8 API를 사용합니다. 카탈로그 등록에 대한 v0.9 예시는 Angular explorer의 [DemoCatalog](../../../renderers/angular/a2ui_explorer/src/app/demo-catalog.ts)를 참고하세요.
+>
+> 또한 클라이언트 측 함수의 경우, 클라이언트는 런타임에 활성 카탈로그 정의에서 설정을 읽어 해당 함수의 실행 경계(예: `clientOnly` 여부)를 결정합니다.
 
 ## 다음 단계
 
