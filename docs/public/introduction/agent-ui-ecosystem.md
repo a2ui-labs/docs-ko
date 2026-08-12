@@ -19,7 +19,7 @@
 
 ## A2UI vs AG-UI / CopilotKit
 
-[AG-UI](https://ag-ui.com/)는 실시간 상태 동기화를 통해 에이전트 백엔드와 프런트엔드를 연결하는 **전송 프로토콜**입니다. A2UI는 **UI 포맷**입니다: 무엇을 렌더링할지 설명하는 페이로드입니다. 이 둘은 상호 보완적입니다. AG-UI를 파이프로, A2UI를 콘텐츠로 사용하세요. AG-UI는 [A2UI Composer](../composer.md)에도 기여한 [CopilotKit](https://copilotkit.ai) 팀의 프로젝트입니다. AG-UI는 A2UI와 즉시 호환됩니다.
+[AG-UI](https://ag-ui.com/)는 실시간 상태 동기화를 통해 에이전트 백엔드와 프런트엔드를 연결하는 **전송 프로토콜**입니다. A2UI는 **UI 포맷**입니다: 무엇을 렌더링할지 설명하는 페이로드입니다. 이 둘은 상호 보완적입니다. AG-UI를 파이프로, A2UI를 콘텐츠로 사용하세요. AG-UI는 [CopilotKit](https://copilotkit.ai) 팀의 프로젝트입니다. AG-UI는 A2UI와 즉시 호환됩니다.
 
 ## A2UI vs ChatKit (OpenAI)
 

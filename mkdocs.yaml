@@ -40,7 +40,9 @@ nav:
       - 어떻게 사용할 수 있나요?: introduction/how-to-use.md
       - 에이전트 UI 생태계: introduction/agent-ui-ecosystem.md
   - 퀵스타트: quickstart.md
-  - A2UI Composer ⭐: composer.md
+  - A2UI Composer ⭐:
+      - composer/index.md
+      - Composer 연동: composer/composer_renderer_integration.md
   - 개념:
       - 개요: concepts/overview.md
       - 용어집: concepts/glossary.md

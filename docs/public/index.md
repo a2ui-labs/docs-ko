@@ -147,6 +147,6 @@ A2UI가 해결하는 문제는 다음과 같습니다: **AI 에이전트가 신�
 
 ### A2UI Composer
 
-CopilotKit의 공개 [A2UI 위젯 빌더](https://go.copilotkit.ai/A2UI-widget-builder)도 체험해 볼 수 있습니다.
+공개된 [A2UI Composer](https://a2ui-project.github.io/composer/)를 제공하고 있습니다.
 
-[![A2UI Composer](assets/A2UI-widget-builder.png)](https://go.copilotkit.ai/A2UI-widget-builder)
+[A2UI Composer 문서](./composer/index.md)

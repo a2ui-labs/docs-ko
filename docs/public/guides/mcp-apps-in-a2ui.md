@@ -26,8 +26,9 @@ Model Context Protocol(MCP)은 MCP 서버가 풍부하고 인터랙티브한 HTM
     - 권한: host template에서는 **sandbox를 적용하지 마세요**. 예: [`mcp-app.ts`](https://github.com/a2ui-project/a2ui/blob/main/samples/community/client/lit/mcp-apps-in-a2ui-sample/mcp-app.ts) 또는 [`mcp-apps-component.ts`](https://github.com/a2ui-project/a2ui/blob/main/samples/community/client/lit/mcp-apps-in-a2ui-sample/ui/custom-components/mcp-apps-component.ts).
     - Host origin 검증: 메시지가 예상한 host origin에서 왔는지 검증합니다.
 2.  **Embedded App(Inner Iframe)**: 가장 안쪽의 `iframe`입니다. 제한된 권한으로 `srcdoc`을 통해 동적으로 주입됩니다.
-    - 권한: `sandbox="allow-scripts allow-forms allow-popups allow-modals"`(`allow-same-origin`은 **반드시 포함하면 안 됩니다**).
+    - 권한: `sandbox="allow-scripts allow-forms allow-popups allow-modals"`(`allow-same-origin`, `allow-top-navigation`, `allow-top-navigation-by-user-activation`은 **반드시 포함하면 안 됩니다**).
     - 격리: unique origin으로 인해 `localStorage`, `sessionStorage`, `IndexedDB`, 쿠키 접근이 제거됩니다.
+    - 최상위 윈도 하이재킹 방어: `allow-top-navigation`과 `allow-top-navigation-by-user-activation`을 제외하면, 내장된 스크립트가 frame busting 공격(예: `window.top.location = "..."`)으로 host 윈도를 다른 곳으로 리디렉션하는 것을 막을 수 있습니다.
 
 ### 물리적 Iframe 중첩
 
