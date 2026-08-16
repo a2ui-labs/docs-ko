@@ -29,6 +29,7 @@ Model Context Protocol(MCP)은 MCP 서버가 풍부하고 인터랙티브한 HTM
     - 권한: `sandbox="allow-scripts allow-forms allow-popups allow-modals"`(`allow-same-origin`, `allow-top-navigation`, `allow-top-navigation-by-user-activation`은 **반드시 포함하면 안 됩니다**).
     - 격리: unique origin으로 인해 `localStorage`, `sessionStorage`, `IndexedDB`, 쿠키 접근이 제거됩니다.
     - 최상위 윈도 하이재킹 방어: `allow-top-navigation`과 `allow-top-navigation-by-user-activation`을 제외하면, 내장된 스크립트가 frame busting 공격(예: `window.top.location = "..."`)으로 host 윈도를 다른 곳으로 리디렉션하는 것을 막을 수 있습니다.
+    - 하이퍼링크를 통한 데이터 유출 방어: `allow-popups`를 제외하고 링크 내비게이션을 가로채면, 신뢰할 수 없는 콘텐츠가 새로 열린 윈도로 유도하는 클릭재킹을 통해 데이터를 빼내는 것을 막을 수 있습니다.
 
 ### 물리적 Iframe 중첩
 

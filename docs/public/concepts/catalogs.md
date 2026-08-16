@@ -1,3 +1,7 @@
+---
+render_macros: false
+---
+
 # A2UI 카탈로그
 
 ## 개요
@@ -54,6 +58,7 @@
 ```json
 {
   "$id": "https://github.com/.../hello_world/v1/catalog.json",
+  "catalogId": "https://github.com/.../hello_world/v1/catalog.json",
   "components": {
     "HelloWorldBanner": {
       "type": "object",
@@ -153,6 +158,19 @@ export const MY_CATALOG = new AngularCatalog(
 > Orchestrator 데모는 현재 v0.8 API를 사용합니다. 카탈로그 등록에 대한 v0.9 예시는 Angular explorer의 [DemoCatalog](../../../renderers/angular/a2ui_explorer/src/app/demo-catalog.ts)를 참고하세요.
 >
 > 또한 클라이언트 측 함수의 경우, 클라이언트는 런타임에 활성 카탈로그 정의에서 설정을 읽어 해당 함수의 실행 경계(예: `clientOnly` 여부)를 결정합니다.
+
+## 카탈로그 네이밍 및 버전 관리
+
+A2UI 컴포넌트 카탈로그에는 버전 관리가 필요합니다. 카탈로그 정의는 대개 컴파일 시점에 빌드에 포함되므로, 에이전트가 생성하는 내용과 클라이언트가 렌더링할 수 있는 내용이 어긋나면 UI에 영향을 줄 수 있기 때문입니다.
+
+### CatalogId 네이밍 규칙
+
+`catalogId`는 클라이언트와 에이전트 간 협상에 사용되는 고유한 텍스트 식별자입니다.
+
+- **형식:** `catalogId`는 기술적으로는 문자열이지만, A2UI의 관례는 **URI**를 사용하는 것입니다(예: `https://example.com/catalogs/mysurface/v1/catalog.json`).
+- **목적:** URI를 사용하면 ID가 전역적으로 고유해지고, 개발자가 브라우저에서 직접 확인하기 쉬워집니다.
+- **런타임 페치 없음:** 이 URI는 에이전트나 클라이언트가 런타임에 카탈로그를 내려받는다는 뜻이 아닙니다. **카탈로그 정의는 에이전트와 클라이언트가 사전에(컴파일/배포 시점에) 알고 있어야 합니다.** URI는 안정적인 식별자 역할만 합니다.
+- **JSON Schema 호환성(`$id`와 `catalogId`):** A2UI 카탈로그는 현재 JSON Schema 문서로 표현되므로, 카탈로그 정의에는 `$id`(JSON Schema 도구용)와 `catalogId`(A2UI SDK 및 카탈로그 협상용)를 모두 포함하고 두 필드를 동일한 URI로 설정해야 합니다.
 
 ## 다음 단계
 

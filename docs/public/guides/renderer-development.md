@@ -126,11 +126,10 @@ import * as Styles from '@a2ui/web_core/styles/index';
     v0.9.1의 모든 요구 사항에 다음이 추가됩니다.
     - **서피스 속성(Surface Properties)**:
         - `surfaceProperties`(`theme`에서 이름 변경)를 사용하는 `createSurface`를 처리합니다. 커스텀 기본 브랜드 색상은 더 이상 서피스 스키마 내부에서 지원되지 않습니다.
-    - **액션 응답(RPC)**:
-        - 서버로부터의 `actionResponse` 메시지를 처리합니다. 이 메시지는 `actionId`와 반환 `value` 또는 `error`를 포함합니다.
+    - **방향별 함수 호출(RPC)**:
+        - 에이전트로부터 오는 `callRendererFunction` 메시지를 처리하고 `rendererFunctionResponse`(또는 `error`)를 반환합니다.
     - **클라이언트-서버 통신**:
-        - `action` 페이로드 내부에 `actionId`를 생성해 포함합니다.
-        - 클라이언트가 응답을 기대하는 경우 액션에 `wantResponse: true`를 지원합니다.
+        - 원격 함수 실행을 위해 에이전트로 `callAgentFunction` 메시지를 개시하는 동작을 지원합니다.
         - A2A를 사용하는 경우, 서버로 전송하는 모든 A2A `Message`는 해당 A2A `Message`의 `metadata` 필드에 `a2uiClientCapabilities` 객체를 포함해야 합니다.
     - **Capabilities**:
         - capabilities 교환 시 `theme` 대신 `surfaceProperties`를 노출합니다.
