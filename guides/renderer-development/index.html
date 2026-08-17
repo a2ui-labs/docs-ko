@@ -2712,18 +2712,18 @@
 <h3 id="_1">유지 관리되는 렌더러들이 이를 사용하는 방법<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>세 웹 렌더러 모두 동일한 패턴을 따릅니다 — <code>web_core</code>가 프로토콜을 처리하고, 렌더러는 UI를 처리합니다.</p>
 <div class="language-typescript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// 타입 — 모든 렌더러가 공유합니다</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Types</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/web_core/types/types&#39;</span><span class="p">;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Primitives</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/web_core/types/primitives&#39;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Types</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@a2ui/web_core/types/types'</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Primitives</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@a2ui/web_core/types/primitives'</span><span class="p">;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// v0.8: 메시지 처리 및 상태</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">A2uiMessageProcessor</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/web_core/data/model-processor&#39;</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">A2uiMessageProcessor</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@a2ui/web_core/data/model-processor'</span><span class="p">;</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">// v0.9.1 / v1.0: 메시지 처리, 서피스, 카탈로그</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">MessageProcessor</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/web_core/v0_9&#39;</span><span class="p">;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">SurfaceModel</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/web_core/v0_9&#39;</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">MessageProcessor</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@a2ui/web_core/v0_9'</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">SurfaceModel</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@a2ui/web_core/v0_9'</span><span class="p">;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1">// 스타일 및 레이아웃 헬퍼</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/web_core/styles/index&#39;</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@a2ui/web_core/styles/index'</span><span class="p">;</span>
 </span></code></pre></div>
 <p>여러분의 렌더러는 다음만 하면 됩니다.</p>
 <ol>
@@ -2838,11 +2838,10 @@
 <p>v0.9.1의 모든 요구 사항에 다음이 추가됩니다.
 - <strong>서피스 속성(Surface Properties)</strong>:
     - <code>surfaceProperties</code>(<code>theme</code>에서 이름 변경)를 사용하는 <code>createSurface</code>를 처리합니다. 커스텀 기본 브랜드 색상은 더 이상 서피스 스키마 내부에서 지원되지 않습니다.
-- <strong>액션 응답(RPC)</strong>:
-    - 서버로부터의 <code>actionResponse</code> 메시지를 처리합니다. 이 메시지는 <code>actionId</code>와 반환 <code>value</code> 또는 <code>error</code>를 포함합니다.
+- <strong>방향별 함수 호출(RPC)</strong>:
+    - 에이전트로부터 오는 <code>callRendererFunction</code> 메시지를 처리하고 <code>rendererFunctionResponse</code>(또는 <code>error</code>)를 반환합니다.
 - <strong>클라이언트-서버 통신</strong>:
-    - <code>action</code> 페이로드 내부에 <code>actionId</code>를 생성해 포함합니다.
-    - 클라이언트가 응답을 기대하는 경우 액션에 <code>wantResponse: true</code>를 지원합니다.
+    - 원격 함수 실행을 위해 에이전트로 <code>callAgentFunction</code> 메시지를 개시하는 동작을 지원합니다.
     - A2A를 사용하는 경우, 서버로 전송하는 모든 A2A <code>Message</code>는 해당 A2A <code>Message</code>의 <code>metadata</code> 필드에 <code>a2uiClientCapabilities</code> 객체를 포함해야 합니다.
 - <strong>Capabilities</strong>:
     - capabilities 교환 시 <code>theme</code> 대신 <code>surfaceProperties</code>를 노출합니다.</p>
