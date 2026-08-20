@@ -1754,9 +1754,10 @@
 <li><strong>Node.js 18+</strong> 및 <strong>Yarn</strong> — 이 모노레포 워크스페이스 안에서 샘플 client app을 빌드하고 실행하는 데 필요합니다.</li>
 <li><strong><code>GEMINI_API_KEY</code></strong> — 모든 ADK 기반 agent에 필요. <a href="https://aistudio.google.com/apikey">Google AI Studio</a>에서 받을 수 있습니다.</li>
 </ul>
+<div class="admonition note">
+<p><strong>패키지 매니저 사용:</strong> A2UI 저장소 안에 내장된 샘플 애플리케이션을 실행하려면 Corepack workspace로 구성된 Yarn이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에 사용할 때는 원하는 패키지 매니저(예: npm, pnpm)를 사용하세요.</p>
+</div>
 <blockquote>
-<p>[!NOTE]
-<strong>패키지 매니저 사용:</strong> A2UI 저장소 안에 내장된 샘플 애플리케이션을 실행하려면 Corepack workspace로 구성된 Yarn이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에 사용할 때는 원하는 패키지 매니저(예: npm, pnpm)를 사용하세요.</p>
 <p>⚠️ <strong>환경 변수 설정</strong>: shell에서 <code>GEMINI_API_KEY</code>를 export하거나 각 agent 디렉터리에 <code>.env</code> 파일을 만들 수 있습니다. agent는 <code>dotenv</code>를 사용해 <code>.env</code> 파일을 자동으로 로드합니다.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Option 1: Export in shell</span>
 </span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GEMINI_API_KEY</span><span class="o">=</span><span class="s2">"your-api-key-here"</span>

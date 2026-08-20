@@ -3108,10 +3108,9 @@
 </blockquote>
 <h3 id="b-recipe-client">옵션 B: Recipe Client 웹 앱 실행<a class="headerlink" href="#b-recipe-client" title="Permanent link">&para;</a></h3>
 <p>A2UI over MCP를 시각적으로 보여 주는 완전히 렌더링된 인터랙티브 경험을 원한다면, 포함된 웹 애플리케이션을 실행하세요.</p>
-<blockquote>
-<p>[!NOTE]
-<strong>패키지 매니저 사용:</strong> A2UI 저장소 안에 내장된 샘플 애플리케이션을 실행하려면 Corepack workspace로 구성된 Yarn(<code>yarn install</code> / <code>yarn dev</code>)이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에 사용할 때는 원하는 패키지 매니저(예: npm, pnpm)를 사용하세요.</p>
-</blockquote>
+<div class="admonition note">
+<p><strong>패키지 매니저 사용:</strong> A2UI 저장소 안에 내장된 샘플 애플리케이션을 실행하려면 Corepack workspace로 구성된 Yarn(<code>yarn install</code> / <code>yarn dev</code>)이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에 사용할 때는 원하는 패키지 매니저(예: npm, pnpm)를 사용하세요.</p>
+</div>
 <ol>
 <li>새 터미널 창에서 client 디렉터리로 이동합니다.
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>client
@@ -3134,11 +3133,10 @@
 <li><strong>도구 호출(<code>tools/call</code>)을 통한 방법</strong>: 클라이언트가 MCP 도구를 호출합니다(예: <code>get_recipe_a2ui</code>). 서버는 A2UI JSON payload를 도구 응답 안의 <strong>Embedded Resource</strong>로 감싸서 반환합니다.</li>
 </ol>
 <p>두 경우 모두 클라이언트는 <code>application/a2ui+json</code> MIME 타입을 감지해 payload를 A2UI 렌더러로 전달합니다.</p>
-<blockquote>
-<p>[!IMPORTANT]
-<strong>MIME 타입 일관성</strong>
-전달 경로(Resource로 직접 가져오든, Tool의 <code>CallToolResult</code> 안에서 반환되든)와 관계없이, A2UI JSON payload는 항상 <code>application/a2ui+json</code> MIME 타입으로 식별됩니다. Tool 응답에서는 payload가 이 MIME 타입을 가진 <code>EmbeddedResource</code>로 감싸져야 합니다. 이러한 일관된 식별 방식 덕분에 클라이언트 측 미들웨어가 정적 리소스와 동적 도구 응답 모두를 매끄럽게 가로채 A2UI로 라우팅할 수 있습니다.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">MIME 타입 일관성</p>
+<p>전달 경로(Resource로 직접 가져오든, Tool의 <code>CallToolResult</code> 안에서 반환되든)와 관계없이, A2UI JSON payload는 항상 <code>application/a2ui+json</code> MIME 타입으로 식별됩니다. Tool 응답에서는 payload가 이 MIME 타입을 가진 <code>EmbeddedResource</code>로 감싸져야 합니다. 이러한 일관된 식별 방식 덕분에 클라이언트 측 미들웨어가 정적 리소스와 동적 도구 응답 모두를 매끄럽게 가로채 A2UI로 라우팅할 수 있습니다.</p>
+</div>
 <h3 id="1-resourcesread">1. 리소스 기반 전달 흐름 (<code>resources/read</code>)<a class="headerlink" href="#1-resourcesread" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Client → resources/read → MCP Server
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                             ↓
