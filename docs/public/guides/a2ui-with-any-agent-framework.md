@@ -256,8 +256,6 @@ A2UI 단계는 프레임워크에 관계없이 동일합니다. 에이전트를 
 
 원하는 개발자 경험에서 시작하세요. 에이전트가 볼 수 있는 카탈로그 정의를 정의하고, 각 정의를 렌더러에 매핑한 다음, 카탈로그를 생성해 CopilotKit에 전달합니다. 프론트엔드 카탈로그 설정이 목표로 하는 A2UI 활성화 표면입니다.
 
-{% raw %}
-
 ```tsx
 import {CopilotKit, CopilotChat} from '@copilotkit/react-core/v2';
 import {
@@ -295,8 +293,6 @@ const catalog = createCatalog(catalogDefinitions, catalogRenderers, {
   <CopilotChat />
 </CopilotKit>;
 ```
-
-{% endraw %}
 
 카탈로그를 provider에 전달하면 A2UI가 자동으로 활성화되고 `generate_a2ui` 도구가 주입되므로, 별도의 런타임 설정 없이도 에이전트가 surface를 생성할 수 있습니다(CopilotKit ≥ 1.61.2). 런타임을 직접 설정하면 이 기능을 끄거나, 카탈로그 없이 수동으로 켤 수도 있습니다.
 
@@ -351,8 +347,6 @@ export type MyDefinitions = typeof myDefinitions;
 
 각 정의를 React 컴포넌트에 매핑합니다. `createCatalog`는 정의 타입에 대해 generic이므로, 렌더러가 받는 props는 Zod 스키마에 맞춰 타입 검사됩니다. 따라서 `props.text`에 오타가 있으면 컴파일 오류가 납니다.
 
-{% raw %}
-
 ```tsx title="lib/a2ui/renderers.tsx"
 'use client';
 
@@ -398,13 +392,9 @@ export const myCatalog = createCatalog(myDefinitions, myRenderers, {
 });
 ```
 
-{% endraw %}
-
 `catalogId`는 에이전트가 이 카탈로그를 대상으로 삼을 때 사용하는 안정적인 핸들입니다. `includeBasicCatalog: true`는 자체 컴포넌트와 함께 내장 컴포넌트도 계속 사용할 수 있게 합니다(생략하면 _여러분의 컴포넌트만_ 렌더링합니다).
 
 #### 3. CopilotKit에 카탈로그 전달
-
-{% raw %}
 
 ```tsx title="app/layout.tsx"
 'use client';
@@ -421,8 +411,6 @@ export default function Layout({children}: {children: React.ReactNode}) {
   );
 }
 ```
-
-{% endraw %}
 
 이제 에이전트는 내장 컴포넌트와 함께 여러분의 커스텀 컴포넌트를 볼 수 있으며, 자신이 내보내는 모든 A2UI surface에서 이를 사용할 수 있습니다.
 

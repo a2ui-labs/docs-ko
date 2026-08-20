@@ -154,10 +154,10 @@ export const MY_CATALOG = new AngularCatalog(
 
 [Orchestrator 데모](../../../samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/catalog.ts)에서 클라이언트 렌더러의 동작 예시를 확인할 수 있습니다.
 
-> [!NOTE]
-> Orchestrator 데모는 현재 v0.8 API를 사용합니다. 카탈로그 등록에 대한 v0.9 예시는 Angular explorer의 [DemoCatalog](../../../renderers/angular/a2ui_explorer/src/app/demo-catalog.ts)를 참고하세요.
->
-> 또한 클라이언트 측 함수의 경우, 클라이언트는 런타임에 활성 카탈로그 정의에서 설정을 읽어 해당 함수의 실행 경계(예: `clientOnly` 여부)를 결정합니다.
+!!! note ""
+    Orchestrator 데모는 현재 v0.8 API를 사용합니다. 카탈로그 등록에 대한 v0.9 예시는 Angular explorer의 [DemoCatalog](../../../renderers/angular/a2ui_explorer/src/app/demo-catalog.ts)를 참고하세요.
+
+    또한 클라이언트 측 함수의 경우, 클라이언트는 런타임에 활성 카탈로그 정의에서 설정을 읽어 해당 함수의 실행 경계(예: `clientOnly` 여부)를 결정합니다.
 
 ## 카탈로그 네이밍 및 버전 관리
 

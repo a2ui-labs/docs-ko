@@ -156,29 +156,27 @@ MCP Apps는 일반적으로 MCP Server에서 단일 HTML resource로 전달됩�
 2.  샘플의 [`inline.js`](https://github.com/a2ui-project/a2ui/blob/main/samples/community/mcp/a2ui-in-mcpapps/server/apps/src/inline.js) 스크립트 같은 post-build script를 사용해 `index.html`을 읽고 외부 `<script src="...">` 및 `<link rel="stylesheet" href="...">` 태그를 실제 파일 내용을 담은 inline `<script>` 및 `<style>` 태그로 교체합니다.
 3.  제한된 iframe에서 `srcdoc`으로 안전하게 로드할 수 있는 self-contained HTML 파일이 만들어집니다.
 
-> [!TIP]
-> **Vite로 inline 처리하기**
->
-> 프로젝트가 Vite를 사용한다면(React, Vue, Lit에서 일반적), `vite-plugin-singlefile` 같은 플러그인을 사용해 동일한 single-file 출력을 자동으로 만들 수 있습니다. 이 플러그인은 빌드 과정에서 inline 처리를 수행하므로 custom post-build script가 필요 없습니다.
->
-> **사용 방법:**
->
-> 1. **플러그인 설치**:
->     ```bash
->     npm install -D vite-plugin-singlefile
->     ```
-> 2. **Vite 설정**: `vite.config.ts`(또는 `.js`)에 플러그인을 추가합니다.
->
->     ```typescript
->     import {defineConfig} from 'vite';
->     import {viteSingleFile} from 'vite-plugin-singlefile';
->
->     export default defineConfig({
->       plugins: [viteSingleFile()],
->     });
->     ```
->
->     이렇게 하면 빌드 시 모든 JS 및 CSS asset이 `index.html` 파일에 inline되어, MCP server가 단일 resource로 제공할 준비가 됩니다.
+!!! tip "Vite로 inline 처리하기"
+    프로젝트가 Vite를 사용한다면(React, Vue, Lit에서 일반적), `vite-plugin-singlefile` 같은 플러그인을 사용해 동일한 single-file 출력을 자동으로 만들 수 있습니다. 이 플러그인은 빌드 과정에서 inline 처리를 수행하므로 custom post-build script가 필요 없습니다.
+
+    **사용 방법:**
+
+    1. **플러그인 설치**:
+        ```bash
+        npm install -D vite-plugin-singlefile
+        ```
+    2. **Vite 설정**: `vite.config.ts`(또는 `.js`)에 플러그인을 추가합니다.
+
+        ```typescript
+        import {defineConfig} from 'vite';
+        import {viteSingleFile} from 'vite-plugin-singlefile';
+
+        export default defineConfig({
+          plugins: [viteSingleFile()],
+        });
+        ```
+
+        이렇게 하면 빌드 시 모든 JS 및 CSS asset이 `index.html` 파일에 inline되어, MCP server가 단일 resource로 제공할 준비가 됩니다.
 
 ### Step 2: A2UI-over-MCP 활용
 

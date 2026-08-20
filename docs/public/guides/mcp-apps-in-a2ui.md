@@ -189,8 +189,8 @@ Host와 embedded inner iframe 사이의 통신은 `postMessage` 위의 구조화
 - **Node.js 18+** 및 **Yarn** — 이 모노레포 워크스페이스 안에서 샘플 client app을 빌드하고 실행하는 데 필요합니다.
 - **`GEMINI_API_KEY`** — 모든 ADK 기반 agent에 필요. [Google AI Studio](https://aistudio.google.com/apikey)에서 받을 수 있습니다.
 
-> [!NOTE]
-> **패키지 매니저 사용:** A2UI 저장소 안에 내장된 샘플 애플리케이션을 실행하려면 Corepack workspace로 구성된 Yarn이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에 사용할 때는 원하는 패키지 매니저(예: npm, pnpm)를 사용하세요.
+!!! note ""
+    **패키지 매니저 사용:** A2UI 저장소 안에 내장된 샘플 애플리케이션을 실행하려면 Corepack workspace로 구성된 Yarn이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에 사용할 때는 원하는 패키지 매니저(예: npm, pnpm)를 사용하세요.
 
 > ⚠️ **환경 변수 설정**: shell에서 `GEMINI_API_KEY`를 export하거나 각 agent 디렉터리에 `.env` 파일을 만들 수 있습니다. agent는 `dotenv`를 사용해 `.env` 파일을 자동으로 로드합니다.
 >

@@ -57,8 +57,8 @@ Inspector에서:
 
 A2UI over MCP를 시각적으로 보여 주는 완전히 렌더링된 인터랙티브 경험을 원한다면, 포함된 웹 애플리케이션을 실행하세요.
 
-> [!NOTE]
-> **패키지 매니저 사용:** A2UI 저장소 안에 내장된 샘플 애플리케이션을 실행하려면 Corepack workspace로 구성된 Yarn(`yarn install` / `yarn dev`)이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에 사용할 때는 원하는 패키지 매니저(예: npm, pnpm)를 사용하세요.
+!!! note ""
+    **패키지 매니저 사용:** A2UI 저장소 안에 내장된 샘플 애플리케이션을 실행하려면 Corepack workspace로 구성된 Yarn(`yarn install` / `yarn dev`)이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에 사용할 때는 원하는 패키지 매니저(예: npm, pnpm)를 사용하세요.
 
 1. 새 터미널 창에서 client 디렉터리로 이동합니다.
     ```bash
@@ -89,9 +89,8 @@ MCP 서버가 클라이언트에 A2UI 콘텐츠를 전달하는 방법은 크게
 
 두 경우 모두 클라이언트는 `application/a2ui+json` MIME 타입을 감지해 payload를 A2UI 렌더러로 전달합니다.
 
-> [!IMPORTANT]
-> **MIME 타입 일관성**
-> 전달 경로(Resource로 직접 가져오든, Tool의 `CallToolResult` 안에서 반환되든)와 관계없이, A2UI JSON payload는 항상 `application/a2ui+json` MIME 타입으로 식별됩니다. Tool 응답에서는 payload가 이 MIME 타입을 가진 `EmbeddedResource`로 감싸져야 합니다. 이러한 일관된 식별 방식 덕분에 클라이언트 측 미들웨어가 정적 리소스와 동적 도구 응답 모두를 매끄럽게 가로채 A2UI로 라우팅할 수 있습니다.
+!!! info "MIME 타입 일관성"
+    전달 경로(Resource로 직접 가져오든, Tool의 `CallToolResult` 안에서 반환되든)와 관계없이, A2UI JSON payload는 항상 `application/a2ui+json` MIME 타입으로 식별됩니다. Tool 응답에서는 payload가 이 MIME 타입을 가진 `EmbeddedResource`로 감싸져야 합니다. 이러한 일관된 식별 방식 덕분에 클라이언트 측 미들웨어가 정적 리소스와 동적 도구 응답 모두를 매끄럽게 가로채 A2UI로 라우팅할 수 있습니다.
 
 ### 1. 리소스 기반 전달 흐름 (`resources/read`)
 

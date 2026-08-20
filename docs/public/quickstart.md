@@ -20,9 +20,8 @@
   Python 에이전트 백엔드를 실행할 때 사용합니다.
 - **Gemini API 키** - [Google AI Studio에서 무료로 받기](https://aistudio.google.com/apikey)
 
-> ⚠️ **보안 알림**
->
-> 이 데모는 Gemini를 사용해 A2UI 응답을 생성하는 A2A 에이전트를 실행합니다. 에이전트는 여러분의 API 키에 접근하고 Google Gemini API에 요청을 보냅니다. 프로덕션 환경에서 실행하기 전에 항상 에이전트 코드를 검토하세요.
+!!! warning "보안 알림"
+    이 데모는 Gemini를 사용해 A2UI 응답을 생성하는 A2A 에이전트를 실행합니다. 에이전트는 여러분의 API 키에 접근하고 Google Gemini API에 요청을 보냅니다. 프로덕션 환경에서 실행하기 전에 항상 에이전트 코드를 검토하세요.
 
 ## 1단계: 저장소 복제
 
@@ -57,15 +56,14 @@ yarn install
 yarn demo:restaurant
 ```
 
-> 💡 **macOS Homebrew 사용자**
->
-> 독립형 패키지 관리자가 이미 설치되어 있다면, Corepack이 프로젝트별로 버전을 관리할 수 있도록 설치 전에 충돌을 해제하세요.
->
-> ```bash
-> brew unlink yarn pnpm
-> brew install corepack
-> corepack enable
-> ```
+!!! tip "macOS Homebrew 사용자"
+    독립형 패키지 관리자가 이미 설치되어 있다면, Corepack이 프로젝트별로 버전을 관리할 수 있도록 설치 전에 충돌을 해제하세요.
+
+    ```bash
+    brew unlink yarn pnpm
+    brew install corepack
+    corepack enable
+    ```
 
 이 명령은 다음을 수행합니다.
 
@@ -77,13 +75,11 @@ yarn demo:restaurant
 
 레스토랑 찾기 에이전트의 소스 코드는 [`samples/agent/adk/restaurant_finder`](../../samples/agent/adk/restaurant_finder)에 있습니다.
 
-> 📝 **패키지 관리자 사용법**
->
-> A2UI 저장소 내에서 퀵스타트 데모 애플리케이션을 실행하려면 Corepack workspaces로 설정된 Yarn이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에는 원하는 패키지 관리자(예: npm, pnpm)를 자유롭게 사용하세요.
+!!! note "패키지 관리자 사용법"
+    A2UI 저장소 내에서 퀵스타트 데모 애플리케이션을 실행하려면 Corepack workspaces로 설정된 Yarn이 필요합니다. 이 저장소 밖에서 여러분만의 일반적인 용도나 독립 프로젝트에는 원하는 패키지 관리자(예: npm, pnpm)를 자유롭게 사용하세요.
 
-> ✅ **데모 실행 중**
->
-> 모든 것이 정상이라면 브라우저에 웹 앱이 표시됩니다. 이제 에이전트가 UI를 생성할 준비가 된 것입니다.
+!!! success "데모 실행 중"
+    모든 것이 정상이라면 브라우저에 웹 앱이 표시됩니다. 이제 에이전트가 UI를 생성할 준비가 된 것입니다.
 
 ## 5단계: 직접 해 보기
 
@@ -188,9 +184,8 @@ yarn demo:restaurant
 
     참고: 컴포넌트는 평평한(flat) 형식을 사용하고, 데이터 모델은 일반 JSON 값을 사용합니다.
 
-> 💡 **그냥 JSON입니다**
->
-> 이 구조가 얼마나 읽기 쉽고 체계적인지 보이시나요? LLM은 쉽게 생성할 수 있고, 코드 실행 없이 안전하게 전송 및 렌더링할 수 있습니다.
+!!! tip "그냥 JSON입니다"
+    이 구조가 얼마나 읽기 쉽고 체계적인지 보이시나요? LLM은 쉽게 생성할 수 있고, 코드 실행 없이 안전하게 전송 및 렌더링할 수 있습니다.
 
 ## 다른 데모 살펴보기
 
@@ -220,6 +215,7 @@ yarn dev
 이 가이드는 Lit 클라이언트를 예시로 사용하지만, A2UI는 `samples/client` 디렉터리에서 다른 인기 프레임워크용 샘플도 제공합니다.
 
 - **Angular**: `samples/client/angular`
+- **Flutter**: `samples/client/flutter`
 - **React**: `samples/client/react`
 
 사용 가능한 모든 클라이언트 구현을 확인하려면 [samples/client](../../samples/client) 디렉터리를 살펴보세요.
