@@ -59,7 +59,7 @@ sequenceDiagram
 
 A2UI를 빠르게 시작할 수 있도록 A2UI 팀이 유지 관리하는 카탈로그입니다.
 
-[basic catalog](../specification/v1_0/catalogs/basic/catalog.json)를 참고하세요.
+[기본 카탈로그(Basic Catalog)](../../../specification/v0_9_1/catalogs/basic/catalog.json)를 참고하세요.
 
 ### Catalog Transformer
 
@@ -141,7 +141,7 @@ A2UI 렌더러의 기능은 별도로 개발하고 재사용할 수 있는 계�
 
     JSON 형태의 카탈로그 정의입니다.
 
-    예를 들어 [basic catalog schema](../specification/v1_0/catalogs/basic/catalog.json)를 참고하세요.
+    예를 들어 [기본 카탈로그 스키마(Basic Catalog Schema)](../../../specification/v0_9_1/catalogs/basic/catalog.json)를 참고하세요.
 
 - **Framework adapter**:<a id="fw-adapter"></a>
 
@@ -192,7 +192,7 @@ fadapter-->core;
 
 컴포넌트 정의에서 데이터 요소를 참조하는 방식입니다. 데이터 모델의 경로 또는 값으로 해석될 수 있습니다.
 
-[basic catalog 예시](../specification/v1_0/catalogs/basic/catalog.json#L18)를 참고하세요.
+[기본 카탈로그 예시](../../../specification/v0_9/catalogs/basic/catalog.json#L23)를 참고하세요.
 
 ### 클라이언트 함수
 
@@ -208,7 +208,7 @@ LLM tool과 혼동하지 마세요.
 | Definition   | 클라이언트 측 함수 레지스트리에 등록되고 카탈로그에 광고됩니다.       | ToolDefinition에 정의됩니다(LLM에 전달됨).                                            |
 | State Access | DataContext와 Input 값에 접근합니다.                                  | AI에 요청을 트리거할 수 없습니다. 외부 API, 데이터베이스, 서비스에는 접근할 수 있습니다. |
 
-[common types 예시](../specification/v0_9/json/common_types.json#L200)를 참고하세요.
+[common types 예시](../../../specification/v0_9_1/json/common_types.json#L200)를 참고하세요.
 
 ### Action
 

@@ -79,14 +79,11 @@ A2UI는 컴포넌트 계층 구조를 위해 **인접 리스트(adjacency list) 
     {"id": "welcome", "component": "Text", "text": "안녕하세요", "variant": "h1"}
     ```
 
-## 표준 카탈로그
+## 기본 카탈로그 (Basic Catalog)
 
-A2UI는 용도별로 정리된 표준 컴포넌트 카탈로그를 정의합니다:
+개발자가 빠르게 시작할 수 있도록 A2UI 팀은 [기본 카탈로그(Basic Catalog)](../../../specification/v0_9_1/catalogs/basic/catalog.json)를 유지 관리합니다.
 
-- **레이아웃 (Layout)**: Row, Column, List - 다른 컴포넌트들을 배치
-- **표시 (Display)**: Text, Image, Icon, Video, Divider - 정보 표시
-- **상호작용 (Interactive)**: Button, TextField, CheckBox, DateTimeInput, Slider - 사용자 입력 수신
-- **컨테이너 (Container)**: Card, Tabs, Modal - 콘텐츠 그룹화 및 조직화
+이는 범용 컴포넌트(Button, Input, Card 등)의 기본 세트를 포함하는 미리 정의된 카탈로그 파일입니다. 특별한 "종류"의 카탈로그가 아니며, 오픈 소스 렌더러가 제공되는 카탈로그의 한 버전일 뿐입니다.
 
 예시가 포함된 전체 컴포넌트 갤러리는 [컴포넌트 레퍼런스](../reference/components.md)를 참조하세요.
 
@@ -95,13 +92,26 @@ A2UI는 용도별로 정리된 표준 컴포넌트 카탈로그를 정의합니�
 === "v0.8"
 
     **정적 (`explicitList`)** - 고정된 자식 ID 리스트:
+
     ```json
-    {"children": {"explicitList": ["back-btn", "title", "menu-btn"]}}
+    {
+      "children": {
+        "explicitList": ["back-btn", "title", "menu-btn"]
+      }
+    }
     ```
 
     **동적 (`template`)** - 데이터 배열로부터 자식 생성:
+
     ```json
-    {"children": {"template": {"dataBinding": "/items", "componentId": "item-template"}}}
+    {
+      "children": {
+        "template": {
+          "dataBinding": "/items",
+          "componentId": "item-template"
+        }
+      }
+    }
     ```
 
     `/items`의 각 항목에 대해 `item-template`을 렌더링합니다. 자세한 내용은 [데이터 바인딩](data-binding.md)을 참조하세요.
@@ -109,18 +119,27 @@ A2UI는 용도별로 정리된 표준 컴포넌트 카탈로그를 정의합니�
 === "v0.9 and later"
 
     **정적** - 고정된 자식 ID 리스트:
+
     ```json
-    {"children": ["back-btn", "title", "menu-btn"]}
+    {
+      "children": ["back-btn", "title", "menu-btn"]
+    }
     ```
 
     **동적** - 데이터 배열로부터 자식 생성:
+
     ```json
-    {"children": {"path": "/items", "componentId": "item-template"}}
+    {
+      "children": {
+        "path": "/items",
+        "componentId": "item-template"
+      }
+    }
     ```
 
     `/items`의 각 항목에 대해 `item-template`을 렌더링합니다. 자세한 내용은 [데이터 바인딩](data-binding.md)을 참조하세요.
 
-## 값 채우기 (Hydrating)
+## 값 채우기 (Hydrating with Values)
 
 컴포넌트는 두 가지 방식으로 값을 가져옵니다:
 
@@ -158,23 +177,21 @@ LLM은 리터럴 값을 가진 컴포넌트를 생성하거나, 동적 콘텐츠
 
 ## 증분 업데이트 (Incremental Updates)
 
-**추가** - 새로운 컴포넌트 ID를 포함한 새 `surfaceUpdate` 전송
-**업데이트** - 기존 ID와 새 속성을 포함한 `surfaceUpdate` 전송
-**삭제** - 삭제할 ID를 제외하도록 부모의 `children` 리스트 업데이트
+증분 업데이트는 다음 작업을 지원합니다:
+
+- **추가 (Add)** - 새로운 ID를 가진 새 컴포넌트 정의 전송
+- **업데이트 (Update)** - 기존 ID와 새 속성을 가진 컴포넌트 정의 전송
+- **삭제 (Remove)** - 삭제할 ID를 제외하도록 부모의 `children` 리스트 업데이트
 
 평면적인 구조 덕분에 모든 업데이트가 단순한 ID 기반 작업으로 처리됩니다.
 
-## 커스텀 컴포넌트
+## 나만의 카탈로그 정의하기 (Defining Your Own Catalog)
 
-표준 카탈로그 외에도, 클라이언트는 도메인 특정 요구 항에 맞는 커스텀 컴포넌트를 정의할 수 있습니다:
+기본 카탈로그(Basic Catalog)는 시작하기에 유용하지만, 대부분의 프로덕션 애플리케이션은 특정 디자인 시스템을 반영하기 위해 자체 카탈로그를 정의합니다.
 
-- **방법**: 여러분의 렌더러에 커스텀 컴포넌트 유형 등록
-- **대상**: 차트, 지도, 커스텀 시각화, 특수 위젯 등
-- **보안**: 커스텀 컴포넌트도 클라이언트의 신뢰할 수 있는 카탈로그의 일부로 관리됨
+자체 카탈로그를 정의하면 에이전트가 일반적인 입력란이나 버튼 대신 애플리케이션에 실제로 존재하는 컴포넌트와 시각적 언어만을 정확하게 사용하도록 제한할 수 있습니다.
 
-커스텀 컴포넌트는 클라이언트 렌더러에서 LLM으로 제공(advertised)됩니다. 그러면 LLM은 표준 카탈로그와 함께 이를 사용할 수 있습니다.
-
-구현 세부 사항은 [커스텀 컴포넌트 가이드](../guides/authoring-components.md)를 참조하세요.
+구현 세부 사항은 [나만의 카탈로그 정의 가이드](../guides/defining-your-own-catalog.md)를 참조하세요.
 
 ## 베스트 프랙티스
 

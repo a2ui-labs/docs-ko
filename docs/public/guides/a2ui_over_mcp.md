@@ -291,7 +291,7 @@ A2UI JSON에서 컴포넌트에 `action`을 추가합니다.
 
 ### 2. 클라이언트가 액션을 도구 호출로 전송
 
-사용자가 버튼을 클릭하면, 클라이언트는 surface 상태를 기준으로 (`/dates/start` 같은) 데이터 바인딩을 해석하고 도구 호출을 전송합니다.
+사용자가 버튼을 클릭하면, 클라이언트는 surface 상태를 기준으로 (`/dates/start` 같은) 데이터 바인딩을 해석하고 필수 액션 필드를 포함한 도구 호출을 전송합니다.
 
 ```json
 {
@@ -302,6 +302,9 @@ A2UI JSON에서 컴포넌트에 `action`을 추가합니다.
     "name": "a2ui_action",
     "arguments": {
       "name": "confirm_booking",
+      "surfaceId": "booking-surface",
+      "sourceComponentId": "confirm-button",
+      "timestamp": "2026-03-20T12:00:00Z",
       "context": {
         "start": "2026-03-20",
         "end": "2026-03-25"
@@ -314,23 +317,32 @@ A2UI JSON에서 컴포넌트에 `action`을 추가합니다.
 ### 3. 서버에서 액션 처리
 
 ```python
-@self.tool()
-async def a2ui_action(name: str, context: dict) -> types.CallToolResult:
+@app.tool()
+async def a2ui_action(
+    name: str,
+    surfaceId: str,
+    sourceComponentId: str,
+    timestamp: str,
+    context: dict[str, Any],
+) -> types.CallToolResult:
     """Handle A2UI user actions."""
     if name == "confirm_booking":
         # Process the booking, then return confirmation UI
         return types.CallToolResult(content=[
             types.TextContent(
                 type="text",
-                text=f"Booking confirmed: {context['start']} to {context['end']}"
+                text=f"Booking confirmed for {surfaceId}: {context['start']} to {context['end']}"
             )
         ])
     raise ValueError(f"Unknown action: {name}")
 ```
 
+> [!NOTE]
+> 5개의 모든 액션 필드(`name`, `surfaceId`, `sourceComponentId`, `timestamp`, `context`)는 A2UI 명세에서 필수 항목입니다. 도구 매개변수에 모든 필드를 선언해야 MCP SDK가 `surfaceId` 등의 필드를 누락하여 원래 surface 컨텍스트를 잃어버리는 것을 방지할 수 있습니다.
+
 ## 오류 처리
 
-클라이언트는 도구 호출을 통해 A2UI 렌더링 오류를 서버에 보고할 수 있습니다.
+클라이언트는 도구 호출을 통해 A2UI 렌더링 및 검증 오류를 서버에 보고할 수 있습니다:
 
 ```json
 {
@@ -340,25 +352,31 @@ async def a2ui_action(name: str, context: dict) -> types.CallToolResult:
   "params": {
     "name": "a2ui_error",
     "arguments": {
-      "code": "INVALID_JSON",
-      "message": "Failed to parse A2UI payload.",
-      "surfaceId": "default"
+      "code": "VALIDATION_FAILED",
+      "surfaceId": "booking-surface",
+      "path": "/components/0/text",
+      "message": "Failed to parse A2UI payload."
     }
   }
 }
 ```
 
-서버에서는 다음과 같이 처리합니다.
+서버에서는 다음과 같이 처리합니다:
 
 ```python
-@self.tool()
-async def a2ui_error(code: str, message: str, surfaceId: str = "") -> types.CallToolResult:
+@app.tool()
+async def a2ui_error(
+    code: str,
+    surfaceId: str,
+    message: str,
+    path: str | None = None,
+) -> types.CallToolResult:
     """Handle A2UI client errors."""
     # Log the error, retry, or send a fallback UI
     return types.CallToolResult(content=[
         types.TextContent(
             type="text",
-            text=f"Acknowledged error {code}: {message}"
+            text=f"Acknowledged error {code} on surface {surfaceId}: {message}"
         )
     ])
 ```
