@@ -2792,7 +2792,7 @@
 <p>아래 예제는 AG-UI 호환 런타임 도구를 사용하므로, 렌더러 활성화, 에이전트에 카탈로그 제공, 사용자에게 UI 업데이트 스트리밍 등 A2UI surface에 집중할 수 있습니다. 프로토콜 수준의 설정과 개념은 <a href="https://docs.ag-ui.com/">AG-UI 문서</a>를 참고하세요.</p>
 <h2 id="_1">에이전트 스킬<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>코딩 에이전트를 사용해 이를 연결한다면, 앱을 수정하기 전에 <a href="https://github.com/ag-ui-protocol/ag-ui/tree/main/skills/ag-ui-a2ui-integration">AG-UI <code>ag-ui-a2ui-integration</code> 스킬</a>을 로드하세요. 이 스킬은 AG-UI 프레임워크 어댑터, 지원되는 <code>create-ag-ui-app</code> 플래그, 전송 계층 설정, A2UI 런타임 및 렌더러 연결, AG-UI + A2UI 앱의 엔드투엔드 검증을 다룹니다.</p>
-<p>앱이 A2UI 렌더링에 CopilotKit을 사용한다면, CopilotKit v2 런타임, provider, 테마, 카탈로그 규칙을 위해 <a href="https://github.com/CopilotKit/CopilotKit/blob/main/skills/a2ui-renderer/SKILL.md">CopilotKit <code>a2ui-renderer</code> 스킬</a>도 함께 로드하세요.</p>
+<p>앱이 A2UI 렌더링에 CopilotKit을 사용한다면, CopilotKit v2 런타임, provider, 테마, 카탈로그 규칙을 위해 <a href="https://github.com/CopilotKit/CopilotKit/blob/main/skills/copilotkit/SKILL.md">CopilotKit <code>copilotkit</code> 스킬</a>도 함께 로드하세요.</p>
 <h2 id="1-ag-ui">1. AG-UI 설정<a class="headerlink" href="#1-ag-ui" title="Permanent link">&para;</a></h2>
 <p>이미 사용 중인 에이전트 프레임워크에서 시작한 다음, 에이전트와 앱 사이에 AG-UI 런타임 연결을 추가합니다. 이 런타임은 A2UI 메시지를 포함한 에이전트 이벤트를 클라이언트 surface로 스트리밍합니다.</p>
 <p>원하는 클라이언트와 에이전트 프레임워크로 AG-UI 앱을 scaffold하려면 AG-UI CLI를 사용하세요.</p>

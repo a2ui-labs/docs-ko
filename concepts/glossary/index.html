@@ -418,6 +418,15 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#capabilities-object">
+<span class="md-ellipsis">
+      
+        Capabilities Object (기능 객체)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#surface">
 <span class="md-ellipsis">
       
@@ -1323,6 +1332,15 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#capabilities-object">
+<span class="md-ellipsis">
+      
+        Capabilities Object (기능 객체)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#surface">
 <span class="md-ellipsis">
       
@@ -1563,6 +1581,11 @@
 <p><code>FunctionPruningTransformer</code>: 허용된 함수 이름 목록을 기준으로 카탈로그를 필터링하는 유틸리티 클래스입니다.</p>
 </li>
 </ul>
+<h3 id="capabilities-object">Capabilities Object (기능 객체)<a class="headerlink" href="#capabilities-object" title="Permanent link">¶</a></h3>
+<p>사용 가능한 카탈로그의 집합입니다. 이 집합을 통해 에이전트나 렌더러는 자신이 지원하는 대상을 광고(advertise)하므로, 상대방은 무엇을 전송해도 되는지 알 수 있습니다.</p>
+<p>예를 들어 렌더러가 Basic, Hotels, Flights 카탈로그를 지원하는 경우, 기능 객체에 이를 명시하여 광고합니다.</p>
+<p>기능 객체는 <a href="#a2ui-message">A2UI 메시지</a>가 아닌 전송 계층 메타데이터 또는 초기화 페이로드를 통해 교환됩니다. 정확한 위치는 전송 방식(transport)에 따라 다릅니다.</p>
+<p>이 객체는 프로토콜의 이전 버전에서는 다른 이름으로 불렸습니다. v0.9 및 v0.9.1에서는 이를 클라이언트 및 서버 기능(client and server capabilities)이라고 불렀으며, v0.8에서는 클라이언트 측 스키마만 정의했습니다.</p>
 <h3 id="surface">Surface<a class="headerlink" href="#surface" title="Permanent link">¶</a></h3>
 <p>A2UI 에이전트가 구성하고 A2UI 렌더러가 관리하는 UI 영역으로, 여러 컴포넌트로 구성됩니다. Surface는 중첩될 수 없습니다.</p>
 <h3 id="a2ui-tag">A2UI Tag<a class="headerlink" href="#a2ui-tag" title="Permanent link">¶</a></h3>
