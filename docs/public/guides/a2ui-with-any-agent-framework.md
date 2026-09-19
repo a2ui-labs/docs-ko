@@ -29,7 +29,7 @@ A2UI는 선언적 UI 형식입니다. [AG-UI](https://ag-ui.com/)는 에이전�
 
 코딩 에이전트를 사용해 이를 연결한다면, 앱을 수정하기 전에 [AG-UI `ag-ui-a2ui-integration` 스킬](https://github.com/ag-ui-protocol/ag-ui/tree/main/skills/ag-ui-a2ui-integration)을 로드하세요. 이 스킬은 AG-UI 프레임워크 어댑터, 지원되는 `create-ag-ui-app` 플래그, 전송 계층 설정, A2UI 런타임 및 렌더러 연결, AG-UI + A2UI 앱의 엔드투엔드 검증을 다룹니다.
 
-앱이 A2UI 렌더링에 CopilotKit을 사용한다면, CopilotKit v2 런타임, provider, 테마, 카탈로그 규칙을 위해 [CopilotKit `a2ui-renderer` 스킬](https://github.com/CopilotKit/CopilotKit/blob/main/skills/a2ui-renderer/SKILL.md)도 함께 로드하세요.
+앱이 A2UI 렌더링에 CopilotKit을 사용한다면, CopilotKit v2 런타임, provider, 테마, 카탈로그 규칙을 위해 [CopilotKit `copilotkit` 스킬](https://github.com/CopilotKit/CopilotKit/blob/main/skills/copilotkit/SKILL.md)도 함께 로드하세요.
 
 ## 1. AG-UI 설정
 

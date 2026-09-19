@@ -253,7 +253,7 @@ sequenceDiagram
 === "Flutter"
 
     - **클라이언트 코드**: `samples/client/flutter/` — A2UI 렌더러가 포함된 Flutter 웹 클라이언트
-    - **A2UI 렌더러**: `renderers/flutter/` (Flutter)
+    - **A2UI 렌더러**: `dart/a2ui_flutter/` (Flutter)
 
 각 디렉터리에는 자세한 문서가 담긴 자체 README가 있습니다.
 
