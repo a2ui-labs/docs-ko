@@ -78,6 +78,22 @@ A2UI가 해결하는 문제는 다음과 같습니다: **AI 에이전트가 신�
 
     [:octicons-arrow-right-24: 시작하기](quickstart.md)
 
+- :material-react:{ .lg .middle } **[모든 에이전트 프레임워크 및 하네스에서 A2UI 사용하기](guides/a2ui-with-any-agent-framework.md)**
+
+    ---
+
+    선호하는 에이전트 프레임워크용 AG-UI 앱 또는 하네스를 스캐폴딩하고, 클라이언트 서피스에서 A2UI 렌더링을 활성화하세요.
+
+    [:octicons-arrow-right-24: 모든 에이전트에서 사용하기](guides/a2ui-with-any-agent-framework.md)
+
+- :material-palette-outline:{ .lg .middle } **[A2UI Composer](https://a2ui-project.github.io/composer/)**
+
+    ---
+
+    비주얼 에디터에서 별도 설치 없이 A2UI JSON을 생성하세요. 출력 결과를 어떤 에이전트 프롬프트에든 붙여넣을 수 있습니다.
+
+    [:octicons-arrow-right-24: Composer 열기](https://a2ui-project.github.io/composer/)
+
 - :material-book-open-variant:{ .lg .middle } **[핵심 개념](concepts/overview.md)**
 
     ---

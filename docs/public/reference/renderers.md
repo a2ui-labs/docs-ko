@@ -8,14 +8,22 @@
 
 ## 유지 관리되는 렌더러
 
+### 웹
+
 | 렌더러 | 플랫폼 | v0.8 | v0.9.1 | v1.0 | 링크 |
 |----------|----------|------|------|------|------|
 | **React** | 웹 | ✅ 안정판 | ✅ 안정판 | 🚧 예정 | [코드](https://github.com/a2ui-project/a2ui/tree/main/renderers/react) |
 | **Lit(Web Components)** | 웹 | ✅ 안정판 | ✅ 안정판 | 🚧 예정 | [코드](https://github.com/a2ui-project/a2ui/tree/main/renderers/lit) |
 | **Angular** | 웹 | ✅ 안정판 | ✅ 안정판 | 🚧 예정 | [코드](https://github.com/a2ui-project/a2ui/tree/main/renderers/angular) |
 | **Flutter(GenUI SDK)** | 모바일/데스크톱/웹 | ✅ 안정판 | ✅ 안정판 | 🚧 예정 | [문서](https://docs.flutter.dev/ai/genui) · [코드](https://github.com/flutter/genui) |
-| **SwiftUI** | iOS/macOS | - | - | 🚧 예정 | - |
-| **Jetpack Compose** | Android | - | - | 🚧 예정 | - |
+
+### 모바일
+
+| 렌더러 | 플랫폼 | v0.8 | v0.9.1 | v1.0 | 링크 |
+|----------|----------|------|------|------|------|
+| **Flutter(GenUI SDK)** | 모바일/데스크톱/웹 | ✅ 안정판 | ✅ 안정판 | 🚧 예정 | [문서](https://docs.flutter.dev/ai/genui) · [코드](https://github.com/flutter/genui) |
+| **SwiftUI** | iOS/macOS | — | — | 🚧 예정 | — |
+| **Jetpack Compose** | Android | — | ✅ 알파 | 🚧 예정 | [문서](https://developer.android.com/develop/ui/compose/agentic) · [코드](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:a2ui/) |
 
 자세한 내용은 [로드맵](../roadmap.md)을 확인하세요.
 

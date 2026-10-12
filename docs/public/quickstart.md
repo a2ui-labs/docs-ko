@@ -248,7 +248,7 @@ sequenceDiagram
 === "Lit"
 
     - **클라이언트 코드**: `samples/client/lit/` — A2UI 렌더러가 포함된 Lit 웹 클라이언트
-    - **A2UI 렌더러**: `renderers/lit/` (Lit) 및 `renderers/web_core/` (프레임워크 중립 코어)
+    - **A2UI 렌더러**: `renderers/lit/` (Lit) 및 `typescript/web_core/` (프레임워크 중립 코어)
 
 === "Flutter"
 

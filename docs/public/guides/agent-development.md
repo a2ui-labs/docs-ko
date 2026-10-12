@@ -98,19 +98,19 @@ adk web
 
 ## A2UI 메시지 생성하기
 
-LLM이 A2UI 메시지를 생성하게 하려면 프롬프트 엔지니어링이 필요합니다. SDK는 카탈로그의 스키마와 예시를 포함하는 시스템 프롬프트를 생성하도록 도와주는 `A2uiSchemaManager`를 제공합니다.
+LLM이 A2UI 메시지를 생성하게 하려면 프롬프트 엔지니어링이 필요합니다. SDK는 카탈로그의 스키마와 예시를 포함하는 시스템 프롬프트를 생성하도록 도와주는 `DirectJsonFormat`을 제공합니다.
 
 먼저 `a2ui-agent-sdk`가 설치되어 있는지 확인하세요(샘플에는 이미 포함되어 있습니다).
 
 에이전트 파일(예: `agent.py`)에 필요한 클래스를 import합니다.
 
 ```python
-from a2ui.schema.constants import VERSION_0_8, VERSION_0_9
-from a2ui.strategies.schema import A2uiSchemaManager
-from a2ui.basic_catalog.provider import BasicCatalog
+from a2ui.core.basic_catalog import BasicCatalog
+from a2ui.inference_formats.direct_json import DirectJsonFormat
+from a2ui.schema import VERSION_0_8, VERSION_0_9
 ```
 
-그런 다음 `A2uiSchemaManager`를 사용해 시스템 프롬프트를 생성할 수 있습니다. 이렇게 하면 스키마와 예시가 항상 올바르게 포매팅되고 최신 상태로 유지됩니다.
+그런 다음 `DirectJsonFormat`을 사용해 시스템 프롬프트를 생성할 수 있습니다. 이렇게 하면 스키마와 예시가 항상 올바르게 포매팅되고 최신 상태로 유지됩니다.
 
 ```python
 # 에이전트의 역할 정의
@@ -128,18 +128,14 @@ UI_DESCRIPTION = """
 -   쿼리가 예약 제출인 경우(예: "사용자가 예약을 제출함..."), 반드시 `CONFIRMATION_EXAMPLE` 템플릿을 사용해야 합니다.
 """
 
-# Basic Catalog로 schema manager 초기화
-schema_manager = A2uiSchemaManager(
-    version=VERSION_0_8, # 최신 프로토콜을 사용하려면 VERSION_0_9를 사용하세요
-    catalogs=[
-        BasicCatalog.get_config(
-            version=VERSION_0_8, examples_path="examples/0.8"
-        )
-    ],
+# Basic Catalog로 추론 포맷 초기화
+inference_format = DirectJsonFormat(
+    [BasicCatalog(VERSION_0_8)],  # 최신 프로토콜을 사용하려면 VERSION_0_9를 사용하세요
+    examples_path="examples/0.8",
 )
 
 # 전체 시스템 프롬프트 생성
-A2UI_AND_AGENT_INSTRUCTION = schema_manager.generate_system_prompt(
+A2UI_AND_AGENT_INSTRUCTION = inference_format.prompt_generator.generate(
     role_description=ROLE_DESCRIPTION,
     ui_description=UI_DESCRIPTION,
     include_schema=True,

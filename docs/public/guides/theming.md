@@ -54,8 +54,8 @@ flowchart TD
 
 A2UI 프로토콜은 `createSurface` 메시지에서 임의의 `theme` 속성을 허용합니다. 현재 이 속성은 Zod 스키마에서 `z.any().optional()`로 정의되어 있으며, 이는 에이전트가 클라이언트 렌더러와 카탈로그가 이해할 수 있는 어떤 JSON 구조든 전달할 수 있음을 의미합니다.
 
-- 스키마 정의는 [server-to-client.ts](../../../renderers/web_core/src/v0_9/schema/server-to-client.ts)를 참고하세요.
-- `Catalog` 클래스와 `themeSchema`는 [catalog/types.ts](../../../renderers/web_core/src/v0_9/catalog/types.ts)를 참고하세요.
+- 스키마 정의는 [server-to-client.ts](../../../typescript/web_core/src/v0_9/schema/server-to-client.ts)를 참고하세요.
+- `Catalog` 클래스와 `themeSchema`는 [catalog/types.ts](../../../typescript/web_core/src/catalog/types.ts)를 참고하세요.
 
 **참고:** _basic catalog_ 컴포넌트는 에이전트로부터 전달된 `theme`를 사용하도록 연결되어 있지 않습니다.
 
@@ -79,7 +79,7 @@ Basic catalog 컴포넌트는 이러한 변수의 기본값을 담은 작은 스
 }
 ```
 
-기본 스타일은 [default.ts](../../../renderers/web_core/src/v0_9/basic_catalog/styles/default.ts)에서 확인할 수 있습니다.
+기본 스타일은 [default.ts](../../../typescript/web_core/src/universal/basic_catalog/styles/default.ts)에서 확인할 수 있습니다.
 
 **플랫폼별 예시:**
 

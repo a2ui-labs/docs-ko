@@ -225,14 +225,18 @@ export const RIZZ_CHARTS_CATALOG = new AngularCatalog(
 
 ```python
 # In agent_executor.py
+from a2ui.inference_formats.direct_json import DirectJsonFormat
+from a2ui.utils import resolve_catalogs
 
 use_ui = try_activate_a2ui_extension(context)
 if use_ui:
-    # Resolve catalog based on client capabilities
-    a2ui_catalog = self.schema_manager.get_selected_catalog(
-        client_ui_capabilities=capabilities
+    # Resolve the catalogs based on client capabilities
+    catalogs = resolve_catalogs(
+        self.catalog_configs, capabilities, accepts_inline_catalogs=True
     )
-    examples = self.schema_manager.load_examples(a2ui_catalog, validate=True)
+    inference_format = DirectJsonFormat(catalogs, examples_path=self.examples_path)
+    a2ui_catalog = catalogs[0]
+    examples = inference_format.prompt_generator.generate_examples(validate=True)
 
     # Save to session (Event contains state_delta)
     await runner.session_service.append_event(
@@ -251,30 +255,28 @@ if use_ui:
 
 ### 4.2 에이전트 도구 설정
 
-Agent는 [SendA2uiToClientToolset](../../../agent_sdks/python/a2ui_agent/src/a2ui/adk/send_a2ui_to_client_toolset.py)을 사용해 A2UI를 클라이언트로 보낼 수 있는 도구를 에이전트에 제공합니다.
+Agent는 [SendA2uiToClientToolset](../../../python/a2ui_agent/src/a2ui/adk/send_a2ui_to_client_toolset.py)을 사용해 A2UI를 클라이언트로 보낼 수 있는 도구를 에이전트에 제공합니다.
 
 ```python
-from a2ui.adk.send_a2ui_to_client_toolset import SendA2uiToClientToolset
+from a2ui.adk import SendA2uiToClientToolset
+from a2ui.utils import resolve_catalogs
 
-a2ui_catalog = self.schema_manager.get_selected_catalog(
-    client_ui_capabilities=capabilities
-)
+a2ui_catalog = resolve_catalogs(self.catalog_configs, capabilities)[0]
 agent.tools = [
     SendA2uiToClientToolset(
-        a2ui_catalog=a2ui_catalog,
         a2ui_enabled=True,
+        a2ui_catalog=a2ui_catalog,
+        a2ui_examples=examples,
     )
 ]
 ```
 
 ### 4.3 도구 실행
 
-LLM이 [SendA2uiToClientToolset](../../../agent_sdks/python/a2ui_agent/src/a2ui/adk/send_a2ui_to_client_toolset.py)의 도구를 호출하면, A2A Agent Executor에서 [A2uiEventConverter](../../../agent_sdks/python/a2ui_agent/src/a2ui/adk/a2a/event_converter.py)를 통해 이를 가로챕니다. 이 변환기는 도구 호출을 A2UI payload가 포함된 A2A Datapart로 자동 변환합니다.
+LLM이 [SendA2uiToClientToolset](../../../python/a2ui_agent/src/a2ui/adk/send_a2ui_to_client_toolset.py)의 도구를 호출하면, A2A Agent Executor에서 [A2uiEventConverter](../../../python/a2ui_agent/src/a2ui/adk/a2a/event_converter.py)를 통해 이를 가로챕니다. 이 변환기는 도구 호출을 A2UI payload가 포함된 A2A Datapart로 자동 변환합니다.
 
 ```python
-from a2ui.adk.a2a.event_converter import (
-    A2uiEventConverter,
-)
+from a2ui.adk import A2uiEventConverter
 
 config = A2aAgentExecutorConfig(event_converter=A2uiEventConverter())
 ```

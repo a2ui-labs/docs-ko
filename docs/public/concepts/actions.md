@@ -300,7 +300,7 @@ multi-agent 시스템에서 중앙 **Orchestrator**는 보통 사용자와 여�
 
 ### Surface Ownership 패턴
 
-multi-agent 아키텍처에서 라우팅을 처리하려면 orchestrator가 각 `surfaceId`와 소유 sub-agent의 매핑을 유지해야 합니다. 공식 Python SDK는 이 매핑을 안전하게 관리할 수 있도록 [`A2uiSubagentMap`](../../../agent_sdks/python/a2ui_agent/src/a2ui/adk/orchestration/a2ui_subagent_map.py) 유틸리티를 제공합니다.
+multi-agent 아키텍처에서 라우팅을 처리하려면 orchestrator가 각 `surfaceId`와 소유 sub-agent의 매핑을 유지해야 합니다. 공식 Python SDK는 이 매핑을 안전하게 관리할 수 있도록 [`A2uiSubagentMap`](../../../python/a2ui_agent/src/a2ui/adk/orchestration/a2ui_subagent_map.py) 유틸리티를 제공합니다.
 
 전체 동작 예시는 [orchestrator agent executor](../../../samples/community/agent/adk/orchestrator/orchestrator_agent_executor.py) 샘플을 참고하세요.
 

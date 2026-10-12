@@ -8,7 +8,7 @@
 
 ## 웹 렌더러: `@a2ui/web_core`(`web_core`) 사용하기
 
-웹용 렌더러(React, Vue, Svelte 등)를 만들고 있다면, 메시지 처리, 상태 관리, 스키마 검증을 처음부터 직접 구현할 필요가 없습니다. **[`@a2ui/web_core`](https://github.com/a2ui-project/a2ui/tree/main/renderers/web_core)** 패키지(`web_core`)는 유지 관리되는 Lit, Angular, React 렌더러가 공유하는, 프레임워크에 종속되지 않는(framework-agnostic) 모든 로직을 제공합니다.
+웹용 렌더러(React, Vue, Svelte 등)를 만들고 있다면, 메시지 처리, 상태 관리, 스키마 검증을 처음부터 직접 구현할 필요가 없습니다. **[`@a2ui/web_core`](https://github.com/a2ui-project/a2ui/tree/main/typescript/web_core)** 패키지(`web_core`)는 유지 관리되는 Lit, Angular, React 렌더러가 공유하는, 프레임워크에 종속되지 않는(framework-agnostic) 모든 로직을 제공합니다.
 
 ### `web_core`가 제공하는 것
 
