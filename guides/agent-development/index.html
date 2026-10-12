@@ -2690,14 +2690,14 @@
 </span></code></pre></div>
 <p>목록에서 <code>my_agent</code>를 선택하고 뉴욕의 레스토랑에 대해 질문해 보세요. UI에서 레스토랑 목록이 일반 텍스트로 표시되는 것을 볼 수 있습니다.</p>
 <h2 id="a2ui">A2UI 메시지 생성하기<a class="headerlink" href="#a2ui" title="Permanent link">&para;</a></h2>
-<p>LLM이 A2UI 메시지를 생성하게 하려면 프롬프트 엔지니어링이 필요합니다. SDK는 카탈로그의 스키마와 예시를 포함하는 시스템 프롬프트를 생성하도록 도와주는 <code>A2uiSchemaManager</code>를 제공합니다.</p>
+<p>LLM이 A2UI 메시지를 생성하게 하려면 프롬프트 엔지니어링이 필요합니다. SDK는 카탈로그의 스키마와 예시를 포함하는 시스템 프롬프트를 생성하도록 도와주는 <code>DirectJsonFormat</code>을 제공합니다.</p>
 <p>먼저 <code>a2ui-agent-sdk</code>가 설치되어 있는지 확인하세요(샘플에는 이미 포함되어 있습니다).</p>
 <p>에이전트 파일(예: <code>agent.py</code>)에 필요한 클래스를 import합니다.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">a2ui.schema.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">VERSION_0_8</span><span class="p">,</span> <span class="n">VERSION_0_9</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">a2ui.strategies.schema</span><span class="w"> </span><span class="kn">import</span> <span class="n">A2uiSchemaManager</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">a2ui.basic_catalog.provider</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicCatalog</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">a2ui.core.basic_catalog</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicCatalog</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">a2ui.inference_formats.direct_json</span><span class="w"> </span><span class="kn">import</span> <span class="n">DirectJsonFormat</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">a2ui.schema</span><span class="w"> </span><span class="kn">import</span> <span class="n">VERSION_0_8</span><span class="p">,</span> <span class="n">VERSION_0_9</span>
 </span></code></pre></div>
-<p>그런 다음 <code>A2uiSchemaManager</code>를 사용해 시스템 프롬프트를 생성할 수 있습니다. 이렇게 하면 스키마와 예시가 항상 올바르게 포매팅되고 최신 상태로 유지됩니다.</p>
+<p>그런 다음 <code>DirectJsonFormat</code>을 사용해 시스템 프롬프트를 생성할 수 있습니다. 이렇게 하면 스키마와 예시가 항상 올바르게 포매팅되고 최신 상태로 유지됩니다.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 에이전트의 역할 정의</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">ROLE_DESCRIPTION</span> <span class="o">=</span> <span class="p">(</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="s2">"당신은 도움이 되는 레스토랑 찾기 어시스턴트입니다. 최종 출력은 반드시 a2ui"</span>
@@ -2713,32 +2713,28 @@
 </span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="s2">-   쿼리가 예약 제출인 경우(예: "사용자가 예약을 제출함..."), 반드시 `CONFIRMATION_EXAMPLE` 템플릿을 사용해야 합니다.</span>
 </span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="s2">"""</span>
 </span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1"># Basic Catalog로 schema manager 초기화</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="n">schema_manager</span> <span class="o">=</span> <span class="n">A2uiSchemaManager</span><span class="p">(</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">version</span><span class="o">=</span><span class="n">VERSION_0_8</span><span class="p">,</span> <span class="c1"># 최신 프로토콜을 사용하려면 VERSION_0_9를 사용하세요</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">catalogs</span><span class="o">=</span><span class="p">[</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="n">BasicCatalog</span><span class="o">.</span><span class="n">get_config</span><span class="p">(</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            <span class="n">version</span><span class="o">=</span><span class="n">VERSION_0_8</span><span class="p">,</span> <span class="n">examples_path</span><span class="o">=</span><span class="s2">"examples/0.8"</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>        <span class="p">)</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="p">],</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="p">)</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="c1"># 전체 시스템 프롬프트 생성</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="n">A2UI_AND_AGENT_INSTRUCTION</span> <span class="o">=</span> <span class="n">schema_manager</span><span class="o">.</span><span class="n">generate_system_prompt</span><span class="p">(</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    <span class="n">role_description</span><span class="o">=</span><span class="n">ROLE_DESCRIPTION</span><span class="p">,</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>    <span class="n">ui_description</span><span class="o">=</span><span class="n">UI_DESCRIPTION</span><span class="p">,</span>
-</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>    <span class="n">include_schema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="n">include_examples</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    <span class="n">validate_examples</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="p">)</span>
-</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>
-</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="n">root_agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
-</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>    <span class="n">model</span><span class="o">=</span><span class="s1">'gemini-2.5-flash'</span><span class="p">,</span>
-</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">"restaurant_agent"</span><span class="p">,</span>
-</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">"레스토랑을 찾고 테이블 예약을 돕는 에이전트입니다."</span><span class="p">,</span>
-</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>    <span class="n">instruction</span><span class="o">=</span><span class="n">A2UI_AND_AGENT_INSTRUCTION</span><span class="p">,</span>
-</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>    <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">get_restaurants</span><span class="p">],</span>
-</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="p">)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1"># Basic Catalog로 추론 포맷 초기화</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="n">inference_format</span> <span class="o">=</span> <span class="n">DirectJsonFormat</span><span class="p">(</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="p">[</span><span class="n">BasicCatalog</span><span class="p">(</span><span class="n">VERSION_0_8</span><span class="p">)],</span>  <span class="c1"># 최신 프로토콜을 사용하려면 VERSION_0_9를 사용하세요</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">examples_path</span><span class="o">=</span><span class="s2">"examples/0.8"</span><span class="p">,</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="p">)</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="c1"># 전체 시스템 프롬프트 생성</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="n">A2UI_AND_AGENT_INSTRUCTION</span> <span class="o">=</span> <span class="n">inference_format</span><span class="o">.</span><span class="n">prompt_generator</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="n">role_description</span><span class="o">=</span><span class="n">ROLE_DESCRIPTION</span><span class="p">,</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">ui_description</span><span class="o">=</span><span class="n">UI_DESCRIPTION</span><span class="p">,</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">include_schema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>    <span class="n">include_examples</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    <span class="n">validate_examples</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="p">)</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="n">root_agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    <span class="n">model</span><span class="o">=</span><span class="s1">'gemini-2.5-flash'</span><span class="p">,</span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">"restaurant_agent"</span><span class="p">,</span>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">"레스토랑을 찾고 테이블 예약을 돕는 에이전트입니다."</span><span class="p">,</span>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>    <span class="n">instruction</span><span class="o">=</span><span class="n">A2UI_AND_AGENT_INSTRUCTION</span><span class="p">,</span>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>    <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">get_restaurants</span><span class="p">],</span>
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="_4">출력 결과 이해하기<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>에이전트는 더 이상 단순한 텍스트만 출력하지 않습니다. 대신 텍스트와 A2UI 메시지의 <strong>JSON 리스트</strong>를 함께 출력합니다.</p>

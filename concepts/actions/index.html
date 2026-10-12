@@ -3544,7 +3544,7 @@
 <h2 id="orchestration-routing">Orchestration과 Routing<a class="headerlink" href="#orchestration-routing" title="Permanent link">&para;</a></h2>
 <p>multi-agent 시스템에서 중앙 <strong>Orchestrator</strong>는 보통 사용자와 여러 전문 sub-agent 사이의 상호작용을 관리합니다. 핵심 과제는 렌더러에서 온 <code>action</code> 메시지가 UI surface를 생성한 특정 sub-agent로 다시 라우팅되도록 보장하는 것입니다.</p>
 <h3 id="surface-ownership">Surface Ownership 패턴<a class="headerlink" href="#surface-ownership" title="Permanent link">&para;</a></h3>
-<p>multi-agent 아키텍처에서 라우팅을 처리하려면 orchestrator가 각 <code>surfaceId</code>와 소유 sub-agent의 매핑을 유지해야 합니다. 공식 Python SDK는 이 매핑을 안전하게 관리할 수 있도록 <a href="https://github.com/google/A2UI/blob/main/../agent_sdks/python/a2ui_agent/src/a2ui/adk/orchestration/a2ui_subagent_map.py"><code>A2uiSubagentMap</code></a> 유틸리티를 제공합니다.</p>
+<p>multi-agent 아키텍처에서 라우팅을 처리하려면 orchestrator가 각 <code>surfaceId</code>와 소유 sub-agent의 매핑을 유지해야 합니다. 공식 Python SDK는 이 매핑을 안전하게 관리할 수 있도록 <a href="https://github.com/google/A2UI/blob/main/../python/a2ui_agent/src/a2ui/adk/orchestration/a2ui_subagent_map.py"><code>A2uiSubagentMap</code></a> 유틸리티를 제공합니다.</p>
 <p>전체 동작 예시는 <a href="https://github.com/google/A2UI/blob/main/../samples/community/agent/adk/orchestrator/orchestrator_agent_executor.py">orchestrator agent executor</a> 샘플을 참고하세요.</p>
 <h4 id="1-ownership">1. 서버 이벤트로부터 Ownership 매핑<a class="headerlink" href="#1-ownership" title="Permanent link">&para;</a></h4>
 <p>sub-agent가 A2UI <code>createSurface</code> 또는 <code>deleteSurface</code>를 내보내면, orchestrator는 해당 메시지를 가로채 <code>update_from_server_event</code>를 사용해 session state에 ownership을 기록합니다.</p>
